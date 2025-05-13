@@ -837,12 +837,14 @@ class Essential_Content_Jetpack_Testimonial_Metabox {
 	}
 }
 
-$ect_metabox = new Essential_Content_Jetpack_Testimonial_Metabox(
-	'ect-options', //metabox id
-	esc_html__( 'Testmonial Options', 'essential-content-types' ), //metabox title
-	array( 'jetpack-testimonial' ) //metabox post types
-);
-
+add_action( 'init', 'register_ect_metabox' );
+function register_ect_metabox() {
+	$ect_metabox = new Essential_Content_Jetpack_Testimonial_Metabox(
+		'ect-options',
+		esc_html__( 'Testmonial Options', 'essential-content-types' ),
+		array( 'jetpack-testimonial' )
+	);
+}
 
 if ( ! function_exists( 'essential_content_get_testimonial_thumbnail_link' ) ) :
 	/**

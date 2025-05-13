@@ -3,7 +3,7 @@ Contributors: catchplugins, catchthemes, sakinshrestha, pratikshrestha, maheshma
 Donate link: https://catchplugins.com/plugins/essential-content-types-pro/
 Tags: custom post types, CPT, CMS, post, types, post type, taxonomy, tax, custom, content types, post types, custom content types, testimonial, portfolio, featured content, service
 Requires at least: 5.9
-Tested up to: 6.6
+Tested up to: 6.8
 Stable tag: trunk
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -200,6 +200,10 @@ Not so easy way (via FTP) :
 5. Customizer: Services Archive Options
 
 == Changelog ==
+
+= 2.3 (Released: May 13, 2025) =
+* Bug Fixed: Translation loading
+* Compatibility check up to version 6.8
 
 = 2.2.6 (Released: September 05, 2024) =
 * Compatibility check up to version 6.6

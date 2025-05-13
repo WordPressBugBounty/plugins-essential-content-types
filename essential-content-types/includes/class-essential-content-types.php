@@ -156,7 +156,7 @@ class Essential_Content_Types {
 		$this->loader->add_filter( 'plugin_action_links', $plugin_admin, 'action_links', 10, 2 );
 
 		$this->loader->add_filter( 'plugin_row_meta', $plugin_admin, 'add_plugin_meta_links', 10, 2 );
-	
+
 	}
 
 	/**
