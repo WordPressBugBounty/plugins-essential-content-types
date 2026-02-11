@@ -1,14 +1,14 @@
 === Essential Content Types ===
 Contributors: catchplugins, catchthemes, sakinshrestha, pratikshrestha, maheshmaharjan, dreamsapana
 Donate link: https://catchplugins.com/plugins/essential-content-types-pro/
-Tags: custom post types, CPT, CMS, post, types, post type, taxonomy, tax, custom, content types, post types, custom content types, testimonial, portfolio, featured content, service
+Tags: custom post types, custom content types, post types, taxonomy, content types
 Requires at least: 5.9
 Tested up to: 6.8
 Stable tag: trunk
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Essential Content Types allows you to feature the impressive content through different content/post types on your website just the way you want it. These content/post types are missed by the themes in WordPress Theme Directory as the feature falls more towards the plugins’ territory.
+Essential Content Types allows you to feature the impressive content through different content/post types on your website just the way you want it.
 
 == Description ==
 
