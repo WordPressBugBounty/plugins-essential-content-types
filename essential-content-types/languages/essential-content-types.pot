@@ -1,11 +1,11 @@
-# Copyright (C) 2018-2022 Catch Plugins
+# Copyright (C) 2018-2026 Catch Plugins
 # This file is distributed under the GNU General Public License v2 or later.
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Essential Content Types\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2025-05-13 19:03+0545\n"
+"POT-Creation-Date: 2026-04-05 14:05+0545\n"
 "PO-Revision-Date: 2016-12-12 09:23-0500\n"
 "Last-Translator: Sakin Shrestha <info@catchplugins.com>\n"
 "Language-Team: Catch Plugins <info@catchplugins.com>\n"
@@ -14,1401 +14,1401 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.9\n"
 "X-Poedit-KeywordsList: "
 "__;_e;_n:1,2;_x:1,2c;esc_attr_e;esc_attr__;_nx;_x;esc_html_e;esc_html__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_n_noop:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../admin/class-essential-content-types-admin.php:179
-#: ../admin/partials/dashboard-display.php:19
+#: ../admin/class-essential-content-types-admin.php:174
+#: ../admin/partials/dashboard-display.php:22
 msgid "Settings"
 msgstr ""
 
-#: ../admin/class-essential-content-types-admin.php:184
+#: ../admin/class-essential-content-types-admin.php:179
 msgid "Upgrade To Premium"
 msgstr ""
 
-#: ../admin/class-essential-content-types-admin.php:184
+#: ../admin/class-essential-content-types-admin.php:179
 msgid "opens in new tab"
 msgstr ""
 
-#: ../admin/class-essential-content-types-admin.php:195
-#: ../admin/class-essential-content-types-admin.php:196
-#: ../admin/partials/essential-content-types-admin-display.php:17
+#: ../admin/class-essential-content-types-admin.php:191
+#: ../admin/class-essential-content-types-admin.php:192
+#: ../admin/partials/essential-content-types-admin-display.php:21
 msgid "Essential Content Types"
 msgstr ""
 
-#: ../admin/class-essential-content-types-admin.php:210
+#: ../admin/class-essential-content-types-admin.php:207
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
 
-#: ../admin/class-essential-content-types-admin.php:220
-#: ../includes/ctp-tabs-removal.php:59
+#: ../admin/class-essential-content-types-admin.php:218
+#: ../includes/ctp-tabs-removal.php:66
 msgid "Invalid Nonce"
 msgstr ""
 
-#: ../admin/class-essential-content-types-admin.php:223
-#: ../includes/ctp-tabs-removal.php:62
+#: ../admin/class-essential-content-types-admin.php:221
+#: ../includes/ctp-tabs-removal.php:69
 msgid "Permission denied!"
 msgstr ""
 
-#: ../admin/class-essential-content-types-admin.php:236
-#: ../includes/ctp-tabs-removal.php:75
+#: ../admin/class-essential-content-types-admin.php:234
+#: ../includes/ctp-tabs-removal.php:82
 msgid "Connection Error. Please try again."
 msgstr ""
 
-#: ../admin/class-featured-content.php:101
+#: ../admin/class-featured-content.php:111
 msgid "Featured Content Items"
 msgstr ""
 
-#: ../admin/class-featured-content.php:103
+#: ../admin/class-featured-content.php:113
 msgid "Featured Contents"
 msgstr ""
 
-#: ../admin/class-featured-content.php:104
-#: ../admin/class-featured-content.php:105
-#: ../admin/class-featured-content.php:303
-#: ../admin/partials/dashboard-display.php:86
-#: ../admin/partials/essential-content-types-admin-display.php:114
-#: ../admin/partials/essential-content-types-admin-display.php:290
-#: ../essential-content-types.php:241
+#: ../admin/class-featured-content.php:114
+#: ../admin/class-featured-content.php:115
+#: ../admin/class-featured-content.php:341
+#: ../admin/partials/dashboard-display.php:99
+#: ../admin/partials/essential-content-types-admin-display.php:118
+#: ../admin/partials/essential-content-types-admin-display.php:335
+#: ../essential-content-types.php:247
 msgid "Featured Content"
 msgstr ""
 
-#: ../admin/class-featured-content.php:106
+#: ../admin/class-featured-content.php:116
 msgid "All Contents"
 msgstr ""
 
-#: ../admin/class-featured-content.php:107 ../admin/class-portfolio.php:234
-#: ../admin/class-service.php:107 ../admin/class-testimonial.php:273
+#: ../admin/class-featured-content.php:117 ../admin/class-portfolio.php:260
+#: ../admin/class-service.php:117 ../admin/class-testimonial.php:292
 msgid "Add New"
 msgstr ""
 
-#: ../admin/class-featured-content.php:108
+#: ../admin/class-featured-content.php:118
 msgid "Add New Content"
 msgstr ""
 
-#: ../admin/class-featured-content.php:109
+#: ../admin/class-featured-content.php:119
 msgid "Edit Content"
 msgstr ""
 
-#: ../admin/class-featured-content.php:110
+#: ../admin/class-featured-content.php:120
 msgid "New Content"
 msgstr ""
 
-#: ../admin/class-featured-content.php:111
+#: ../admin/class-featured-content.php:121
 msgid "View Content"
 msgstr ""
 
-#: ../admin/class-featured-content.php:112
+#: ../admin/class-featured-content.php:122
 msgid "Search Contents"
 msgstr ""
 
-#: ../admin/class-featured-content.php:113
+#: ../admin/class-featured-content.php:123
 msgid "No Contents found"
 msgstr ""
 
-#: ../admin/class-featured-content.php:114
+#: ../admin/class-featured-content.php:124
 msgid "No Contents found in Trash"
 msgstr ""
 
-#: ../admin/class-featured-content.php:115 ../admin/class-service.php:115
+#: ../admin/class-featured-content.php:125 ../admin/class-service.php:125
 msgid "Filter contents list"
 msgstr ""
 
-#: ../admin/class-featured-content.php:116
+#: ../admin/class-featured-content.php:126
 msgid "Content list navigation"
 msgstr ""
 
-#: ../admin/class-featured-content.php:117
+#: ../admin/class-featured-content.php:127
 msgid "Contents list"
 msgstr ""
 
-#: ../admin/class-featured-content.php:161
-#: ../admin/class-featured-content.php:163
+#: ../admin/class-featured-content.php:171
+#: ../admin/class-featured-content.php:173
 msgid "Content Types"
 msgstr ""
 
-#: ../admin/class-featured-content.php:162
+#: ../admin/class-featured-content.php:172
 msgid "Content Type"
 msgstr ""
 
-#: ../admin/class-featured-content.php:164
+#: ../admin/class-featured-content.php:174
 msgid "All Content Types"
 msgstr ""
 
-#: ../admin/class-featured-content.php:165
+#: ../admin/class-featured-content.php:175
 msgid "Edit Content Type"
 msgstr ""
 
-#: ../admin/class-featured-content.php:166
+#: ../admin/class-featured-content.php:176
 msgid "View Content Type"
 msgstr ""
 
-#: ../admin/class-featured-content.php:167
+#: ../admin/class-featured-content.php:177
 msgid "Update Content Type"
 msgstr ""
 
-#: ../admin/class-featured-content.php:168
+#: ../admin/class-featured-content.php:178
 msgid "Add New Content Type"
 msgstr ""
 
-#: ../admin/class-featured-content.php:169
+#: ../admin/class-featured-content.php:179
 msgid "New Content Type Name"
 msgstr ""
 
-#: ../admin/class-featured-content.php:170
+#: ../admin/class-featured-content.php:180
 msgid "Parent Content Type"
 msgstr ""
 
-#: ../admin/class-featured-content.php:171
+#: ../admin/class-featured-content.php:181
 msgid "Parent Content Type:"
 msgstr ""
 
-#: ../admin/class-featured-content.php:172
+#: ../admin/class-featured-content.php:182
 msgid "Search Content Types"
 msgstr ""
 
-#: ../admin/class-featured-content.php:173
+#: ../admin/class-featured-content.php:183
 msgid "Content type list navigation"
 msgstr ""
 
-#: ../admin/class-featured-content.php:174
+#: ../admin/class-featured-content.php:184
 msgid "Content type list"
 msgstr ""
 
-#: ../admin/class-featured-content.php:192
-#: ../admin/class-featured-content.php:194
+#: ../admin/class-featured-content.php:202
+#: ../admin/class-featured-content.php:204
 msgid "Content Tags"
 msgstr ""
 
-#: ../admin/class-featured-content.php:193
+#: ../admin/class-featured-content.php:203
 msgid "Content Tag"
 msgstr ""
 
-#: ../admin/class-featured-content.php:195
+#: ../admin/class-featured-content.php:205
 msgid "All Content Tags"
 msgstr ""
 
-#: ../admin/class-featured-content.php:196
+#: ../admin/class-featured-content.php:206
 msgid "Edit Content Tag"
 msgstr ""
 
-#: ../admin/class-featured-content.php:197
+#: ../admin/class-featured-content.php:207
 msgid "View Content Tag"
 msgstr ""
 
-#: ../admin/class-featured-content.php:198
+#: ../admin/class-featured-content.php:208
 msgid "Update Content Tag"
 msgstr ""
 
-#: ../admin/class-featured-content.php:199
+#: ../admin/class-featured-content.php:209
 msgid "Add New Content Tag"
 msgstr ""
 
-#: ../admin/class-featured-content.php:200
+#: ../admin/class-featured-content.php:210
 msgid "New Content Tag Name"
 msgstr ""
 
-#: ../admin/class-featured-content.php:201
+#: ../admin/class-featured-content.php:211
 msgid "Search Content Tags"
 msgstr ""
 
-#: ../admin/class-featured-content.php:202
+#: ../admin/class-featured-content.php:212
 msgid "Popular Content Tags"
 msgstr ""
 
-#: ../admin/class-featured-content.php:203 ../admin/class-portfolio.php:321
-#: ../admin/class-service.php:193
+#: ../admin/class-featured-content.php:213 ../admin/class-portfolio.php:347
+#: ../admin/class-service.php:203
 msgid "Separate tags with commas"
 msgstr ""
 
-#: ../admin/class-featured-content.php:204 ../admin/class-portfolio.php:322
-#: ../admin/class-service.php:194
+#: ../admin/class-featured-content.php:214 ../admin/class-portfolio.php:348
+#: ../admin/class-service.php:204
 msgid "Add or remove tags"
 msgstr ""
 
-#: ../admin/class-featured-content.php:205 ../admin/class-portfolio.php:323
-#: ../admin/class-service.php:195
+#: ../admin/class-featured-content.php:215 ../admin/class-portfolio.php:349
+#: ../admin/class-service.php:205
 msgid "Choose from the most used tags"
 msgstr ""
 
-#: ../admin/class-featured-content.php:206 ../admin/class-portfolio.php:324
-#: ../admin/class-service.php:196
+#: ../admin/class-featured-content.php:216 ../admin/class-portfolio.php:350
+#: ../admin/class-service.php:206
 msgid "No tags found."
 msgstr ""
 
-#: ../admin/class-featured-content.php:207
+#: ../admin/class-featured-content.php:217
 msgid "Content tag list navigation"
 msgstr ""
 
-#: ../admin/class-featured-content.php:208
+#: ../admin/class-featured-content.php:218
 msgid "Content tag list"
 msgstr ""
 
-#: ../admin/class-featured-content.php:229
+#: ../admin/class-featured-content.php:243
 #, php-format
 msgid "Content updated. <a href=\"%s\">View item</a>"
 msgstr ""
 
-#: ../admin/class-featured-content.php:230 ../admin/class-food-menu.php:269
-#: ../admin/class-portfolio.php:347 ../admin/class-service.php:219
-#: ../admin/class-testimonial.php:327
+#: ../admin/class-featured-content.php:247 ../admin/class-food-menu.php:281
+#: ../admin/class-portfolio.php:380 ../admin/class-service.php:236
+#: ../admin/class-testimonial.php:353
 msgid "Custom field updated."
 msgstr ""
 
-#: ../admin/class-featured-content.php:231 ../admin/class-food-menu.php:270
-#: ../admin/class-portfolio.php:348 ../admin/class-service.php:220
-#: ../admin/class-testimonial.php:328
+#: ../admin/class-featured-content.php:248 ../admin/class-food-menu.php:282
+#: ../admin/class-portfolio.php:381 ../admin/class-service.php:237
+#: ../admin/class-testimonial.php:354
 msgid "Custom field deleted."
 msgstr ""
 
-#: ../admin/class-featured-content.php:232
+#: ../admin/class-featured-content.php:249
 msgid "Content updated."
 msgstr ""
 
-#: ../admin/class-featured-content.php:234
+#: ../admin/class-featured-content.php:251
 #, php-format
 msgid "Content restored to revision from %s"
 msgstr ""
 
-#: ../admin/class-featured-content.php:235
+#: ../admin/class-featured-content.php:255
 #, php-format
 msgid "Content published. <a href=\"%s\">View content</a>"
 msgstr ""
 
-#: ../admin/class-featured-content.php:236
+#: ../admin/class-featured-content.php:259
 msgid "Content saved."
 msgstr ""
 
-#: ../admin/class-featured-content.php:237
+#: ../admin/class-featured-content.php:263
 #, php-format
 msgid ""
 "Content submitted. <a target=\"_blank\" href=\"%s\">Preview content</a>"
 msgstr ""
 
-#: ../admin/class-featured-content.php:239
+#: ../admin/class-featured-content.php:269
 #, php-format
 msgid ""
 "Content scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" "
 "href=\"%2$s\">Preview content</a>"
 msgstr ""
 
-#: ../admin/class-featured-content.php:241 ../admin/class-food-menu.php:284
-#: ../admin/class-portfolio.php:357 ../admin/class-service.php:229
-#: ../admin/class-testimonial.php:338
+#: ../admin/class-featured-content.php:271 ../admin/class-food-menu.php:299
+#: ../admin/class-portfolio.php:406 ../admin/class-service.php:262
+#: ../admin/class-testimonial.php:379
 msgid "M j, Y @ G:i"
 msgstr ""
 
-#: ../admin/class-featured-content.php:244
+#: ../admin/class-featured-content.php:276
 #, php-format
 msgid ""
 "Content item draft updated. <a target=\"_blank\" href=\"%s\">Preview "
 "content</a>"
 msgstr ""
 
-#: ../admin/class-featured-content.php:256
+#: ../admin/class-featured-content.php:291
 msgid "Content"
 msgstr ""
 
-#: ../admin/class-featured-content.php:295 ../admin/class-portfolio.php:413
-#: ../admin/class-service.php:279 ../admin/class-testimonial.php:453
+#: ../admin/class-featured-content.php:333 ../admin/class-portfolio.php:474
+#: ../admin/class-service.php:324 ../admin/class-testimonial.php:510
 msgid "Essential Content Types Plugin Options"
 msgstr ""
 
-#: ../admin/class-featured-content.php:311
+#: ../admin/class-featured-content.php:349
 msgid "Contents"
 msgstr ""
 
-#: ../admin/class-featured-content.php:322
+#: ../admin/class-featured-content.php:360
 msgid "Featured Content Archive Title"
 msgstr ""
 
-#: ../admin/class-featured-content.php:341
+#: ../admin/class-featured-content.php:379
 msgid "Featured Content Archive Content"
 msgstr ""
 
-#: ../admin/class-featured-content.php:363
+#: ../admin/class-featured-content.php:401
 msgid "Featured Content Archive Featured Image"
 msgstr ""
 
-#: ../admin/class-featured-content.php:618 ../admin/class-portfolio.php:712
-#: ../admin/class-service.php:575
+#: ../admin/class-featured-content.php:662 ../admin/class-portfolio.php:779
+#: ../admin/class-service.php:626
 msgid "Types"
 msgstr ""
 
-#: ../admin/class-featured-content.php:649 ../admin/class-portfolio.php:743
-#: ../admin/class-service.php:606
+#: ../admin/class-featured-content.php:694 ../admin/class-portfolio.php:811
+#: ../admin/class-service.php:658
 msgid "Tags"
 msgstr ""
 
-#: ../admin/class-featured-content.php:676 ../admin/class-portfolio.php:769
-#: ../admin/class-service.php:632
+#: ../admin/class-featured-content.php:722 ../admin/class-portfolio.php:841
+#: ../admin/class-service.php:688
 #, php-format
 msgid "<span>Author:</span> <a href=\"%1$s\">%2$s</a>"
 msgstr ""
 
-#: ../admin/class-featured-content.php:729
+#: ../admin/class-featured-content.php:778
 msgid ""
 "Your Featured Content Archive currently has no entries. You can start "
 "creating them on your dashboard."
 msgstr ""
 
-#: ../admin/class-food-menu.php:129
+#: ../admin/class-food-menu.php:139
 msgid "Menu Item Labels"
 msgstr ""
 
-#: ../admin/class-food-menu.php:131
+#: ../admin/class-food-menu.php:141
 msgid "Menu Item Label"
 msgstr ""
 
-#: ../admin/class-food-menu.php:133
+#: ../admin/class-food-menu.php:143
 msgid "Search Menu Item Labels"
 msgstr ""
 
-#: ../admin/class-food-menu.php:134
+#: ../admin/class-food-menu.php:144
 msgid "Popular Labels"
 msgstr ""
 
-#: ../admin/class-food-menu.php:136
+#: ../admin/class-food-menu.php:146
 msgid "All Menu Item Labels"
 msgstr ""
 
-#: ../admin/class-food-menu.php:138
+#: ../admin/class-food-menu.php:148
 msgid "Edit Menu Item Label"
 msgstr ""
 
-#: ../admin/class-food-menu.php:140
+#: ../admin/class-food-menu.php:150
 msgid "View Menu Item Label"
 msgstr ""
 
-#: ../admin/class-food-menu.php:142
+#: ../admin/class-food-menu.php:152
 msgid "Update Menu Item Label"
 msgstr ""
 
-#: ../admin/class-food-menu.php:144
+#: ../admin/class-food-menu.php:154
 msgid "Add New Menu Item Label"
 msgstr ""
 
-#: ../admin/class-food-menu.php:146
+#: ../admin/class-food-menu.php:156
 msgid "New Menu Item Label Name"
 msgstr ""
 
-#: ../admin/class-food-menu.php:147
+#: ../admin/class-food-menu.php:157
 msgid "For example, spicy, favorite, etc. <br /> Separate Labels with commas"
 msgstr ""
 
-#: ../admin/class-food-menu.php:148
+#: ../admin/class-food-menu.php:158
 msgid "Add or remove Labels"
 msgstr ""
 
-#: ../admin/class-food-menu.php:149
+#: ../admin/class-food-menu.php:159
 msgid "Choose from the most used Labels"
 msgstr ""
 
-#: ../admin/class-food-menu.php:150
+#: ../admin/class-food-menu.php:160
 msgid "Menu item label list navigation"
 msgstr ""
 
-#: ../admin/class-food-menu.php:151
+#: ../admin/class-food-menu.php:161
 msgid "Menu item labels list"
 msgstr ""
 
-#: ../admin/class-food-menu.php:153
+#: ../admin/class-food-menu.php:163
 msgid "No Labels found"
 msgstr ""
 
-#: ../admin/class-food-menu.php:162
+#: ../admin/class-food-menu.php:172
 msgid "Menu Sections"
 msgstr ""
 
-#: ../admin/class-food-menu.php:164
+#: ../admin/class-food-menu.php:174
 msgid "Menu Section"
 msgstr ""
 
-#: ../admin/class-food-menu.php:166
+#: ../admin/class-food-menu.php:176
 msgid "Search Menu Sections"
 msgstr ""
 
-#: ../admin/class-food-menu.php:168
+#: ../admin/class-food-menu.php:178
 msgid "All Menu Sections"
 msgstr ""
 
-#: ../admin/class-food-menu.php:170
+#: ../admin/class-food-menu.php:180
 msgid "Parent Menu Section"
 msgstr ""
 
-#: ../admin/class-food-menu.php:172
+#: ../admin/class-food-menu.php:182
 msgid "Parent Menu Section:"
 msgstr ""
 
-#: ../admin/class-food-menu.php:174
+#: ../admin/class-food-menu.php:184
 msgid "Edit Menu Section"
 msgstr ""
 
-#: ../admin/class-food-menu.php:176
+#: ../admin/class-food-menu.php:186
 msgid "View Menu Section"
 msgstr ""
 
-#: ../admin/class-food-menu.php:178
+#: ../admin/class-food-menu.php:188
 msgid "Update Menu Section"
 msgstr ""
 
-#: ../admin/class-food-menu.php:180
+#: ../admin/class-food-menu.php:190
 msgid "Add New Menu Section"
 msgstr ""
 
-#: ../admin/class-food-menu.php:182
+#: ../admin/class-food-menu.php:192
 msgid "New Menu Sections Name"
 msgstr ""
 
-#: ../admin/class-food-menu.php:183
+#: ../admin/class-food-menu.php:193
 msgid "Menu section list navigation"
 msgstr ""
 
-#: ../admin/class-food-menu.php:184
+#: ../admin/class-food-menu.php:194
 msgid "Menu section list"
 msgstr ""
 
-#: ../admin/class-food-menu.php:204
+#: ../admin/class-food-menu.php:215
 msgid "Items on your restaurant's menu"
 msgstr ""
 
-#: ../admin/class-food-menu.php:208 ../admin/class-food-menu.php:214
+#: ../admin/class-food-menu.php:219 ../admin/class-food-menu.php:225
 msgid "Menu Items"
 msgstr ""
 
-#: ../admin/class-food-menu.php:210
+#: ../admin/class-food-menu.php:221
 msgid "Menu Item"
 msgstr ""
 
-#: ../admin/class-food-menu.php:212
+#: ../admin/class-food-menu.php:223
 msgid "Food Menus"
 msgstr ""
 
-#: ../admin/class-food-menu.php:216
+#: ../admin/class-food-menu.php:227
 msgid "Add One Item"
 msgstr ""
 
-#: ../admin/class-food-menu.php:218
+#: ../admin/class-food-menu.php:229
 msgid "Add Menu Item"
 msgstr ""
 
-#: ../admin/class-food-menu.php:220
+#: ../admin/class-food-menu.php:231
 msgid "Edit Menu Item"
 msgstr ""
 
-#: ../admin/class-food-menu.php:222
+#: ../admin/class-food-menu.php:233
 msgid "New Menu Item"
 msgstr ""
 
-#: ../admin/class-food-menu.php:224
+#: ../admin/class-food-menu.php:235
 msgid "View Menu Item"
 msgstr ""
 
-#: ../admin/class-food-menu.php:226
+#: ../admin/class-food-menu.php:237
 msgid "Search Menu Items"
 msgstr ""
 
-#: ../admin/class-food-menu.php:228
+#: ../admin/class-food-menu.php:239
 msgid "No Menu Items found"
 msgstr ""
 
-#: ../admin/class-food-menu.php:230
+#: ../admin/class-food-menu.php:241
 msgid "No Menu Items found in Trash"
 msgstr ""
 
-#: ../admin/class-food-menu.php:231
+#: ../admin/class-food-menu.php:242
 msgid "Filter menu items list"
 msgstr ""
 
-#: ../admin/class-food-menu.php:232
+#: ../admin/class-food-menu.php:243
 msgid "Menu item list navigation"
 msgstr ""
 
-#: ../admin/class-food-menu.php:233
+#: ../admin/class-food-menu.php:244
 msgid "Menu items list"
-msgstr ""
-
-#: ../admin/class-food-menu.php:268
-#, php-format
-msgid "Menu item updated. <a href=\"%s\">View item</a>"
-msgstr ""
-
-#: ../admin/class-food-menu.php:272
-msgid "Menu item updated."
-msgstr ""
-
-#: ../admin/class-food-menu.php:274
-#, php-format
-msgid "Menu item restored to revision from %s"
-msgstr ""
-
-#: ../admin/class-food-menu.php:276
-#, php-format
-msgid "Menu item published. <a href=\"%s\">View item</a>"
-msgstr ""
-
-#: ../admin/class-food-menu.php:278
-msgid "Menu item saved."
 msgstr ""
 
 #: ../admin/class-food-menu.php:280
 #, php-format
+msgid "Menu item updated. <a href=\"%s\">View item</a>"
+msgstr ""
+
+#: ../admin/class-food-menu.php:284
+msgid "Menu item updated."
+msgstr ""
+
+#: ../admin/class-food-menu.php:286
+#, php-format
+msgid "Menu item restored to revision from %s"
+msgstr ""
+
+#: ../admin/class-food-menu.php:288
+#, php-format
+msgid "Menu item published. <a href=\"%s\">View item</a>"
+msgstr ""
+
+#: ../admin/class-food-menu.php:290
+msgid "Menu item saved."
+msgstr ""
+
+#: ../admin/class-food-menu.php:292
+#, php-format
 msgid "Menu item submitted. <a target=\"_blank\" href=\"%s\">Preview item</a>"
 msgstr ""
 
-#: ../admin/class-food-menu.php:282
+#: ../admin/class-food-menu.php:296
 #, php-format
 msgid ""
 "Menu item scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" "
 "href=\"%2$s\">Preview item</a>"
 msgstr ""
 
-#: ../admin/class-food-menu.php:286
+#: ../admin/class-food-menu.php:303
 #, php-format
 msgid ""
 "Menu item draft updated. <a target=\"_blank\" href=\"%s\">Preview item</a>"
 msgstr ""
 
-#: ../admin/class-food-menu.php:316
+#: ../admin/class-food-menu.php:335
 msgid "Enter the menu item's name here"
 msgstr ""
 
-#: ../admin/class-food-menu.php:331 ../admin/class-food-menu.php:336
+#: ../admin/class-food-menu.php:355 ../admin/class-food-menu.php:365
 #, php-format
 msgid "%1$d Food Menu Item"
 msgid_plural "%1$d Food Menu Items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../admin/class-food-menu.php:422 ../admin/class-food-menu.php:423
-#: ../admin/class-food-menu.php:929
+#: ../admin/class-food-menu.php:457 ../admin/class-food-menu.php:458
+#: ../admin/class-food-menu.php:976
 msgid "Add Many Items"
 msgstr ""
 
-#: ../admin/class-food-menu.php:482
+#: ../admin/class-food-menu.php:520
 msgid "Menu Items re-ordered."
 msgstr ""
 
-#: ../admin/class-food-menu.php:501
+#: ../admin/class-food-menu.php:542
 msgid "Thumbnail"
 msgstr ""
 
-#: ../admin/class-food-menu.php:502
+#: ../admin/class-food-menu.php:543
 msgid "Labels"
 msgstr ""
 
-#: ../admin/class-food-menu.php:503 ../admin/class-food-menu.php:946
-#: ../admin/class-food-menu.php:991 ../admin/class-food-menu.php:997
+#: ../admin/class-food-menu.php:544 ../admin/class-food-menu.php:995
+#: ../admin/class-food-menu.php:1041 ../admin/class-food-menu.php:1048
 msgid "Price"
 msgstr ""
 
-#: ../admin/class-food-menu.php:504
-#: ../admin/partials/essential-content-types-admin-display.php:134
-#: ../admin/partials/essential-content-types-admin-display.php:242
+#: ../admin/class-food-menu.php:545
+#: ../admin/partials/essential-content-types-admin-display.php:138
+#: ../admin/partials/essential-content-types-admin-display.php:263
 msgid "Order"
 msgstr ""
 
-#: ../admin/class-food-menu.php:570 ../admin/class-food-menu.php:628
+#: ../admin/class-food-menu.php:614 ../admin/class-food-menu.php:670
 msgid "Save New Order"
 msgstr ""
 
-#: ../admin/class-food-menu.php:831
+#: ../admin/class-food-menu.php:875
 msgid "edit"
 msgstr ""
 
-#: ../admin/class-food-menu.php:834
+#: ../admin/class-food-menu.php:877
 msgid "Uncategorized"
 msgstr ""
 
-#: ../admin/class-food-menu.php:840
+#: ../admin/class-food-menu.php:883
 msgid "Move menu section up"
 msgstr ""
 
-#: ../admin/class-food-menu.php:840
+#: ../admin/class-food-menu.php:883
 msgid "UP"
 msgstr ""
 
-#: ../admin/class-food-menu.php:842
+#: ../admin/class-food-menu.php:885
 msgid "Move menu section down"
 msgstr ""
 
-#: ../admin/class-food-menu.php:842
+#: ../admin/class-food-menu.php:885
 msgid "DOWN"
 msgstr ""
 
-#: ../admin/class-food-menu.php:931
+#: ../admin/class-food-menu.php:978
 msgid ""
 "Use the <kbd>TAB</kbd> key on your keyboard to move between colums and the "
 "<kbd>ENTER</kbd> or <kbd>RETURN</kbd> key to save each row and move on to "
 "the next."
 msgstr ""
 
-#: ../admin/class-food-menu.php:934
+#: ../admin/class-food-menu.php:982
 msgid "Add to section:"
 msgstr ""
 
-#: ../admin/class-food-menu.php:945
+#: ../admin/class-food-menu.php:994
 msgid "Name"
 msgstr ""
 
-#: ../admin/class-food-menu.php:947
+#: ../admin/class-food-menu.php:996
 msgid ""
 "Labels: <small>spicy, favorite, etc. <em>Separate Labels with commas</em></"
 "small>"
 msgstr ""
 
-#: ../admin/class-food-menu.php:948
+#: ../admin/class-food-menu.php:997
 msgid "Description"
 msgstr ""
 
-#: ../admin/class-food-menu.php:969
+#: ../admin/class-food-menu.php:1018
 msgid "New Row"
 msgstr ""
 
-#: ../admin/class-food-menu.php:978
+#: ../admin/class-food-menu.php:1027
 msgid "Add These New Menu Items"
 msgstr ""
 
-#: ../admin/class-food-menu.php:1065 ../admin/class-food-menu.php:1084
+#: ../admin/class-food-menu.php:1119 ../admin/class-food-menu.php:1139
 msgctxt "Nova label separator"
 msgid ", "
 msgstr ""
 
-#: ../admin/class-food-menu.php:1086
+#: ../admin/class-food-menu.php:1141
 msgid "No Labels"
 msgstr ""
 
-#: ../admin/class-food-menu.php:1451
+#: ../admin/class-food-menu.php:1522
 msgid ""
 "Your Food Menu Archive currently has no entries. You can start creating "
 "them on your dashboard."
 msgstr ""
 
-#: ../admin/class-portfolio.php:97
+#: ../admin/class-portfolio.php:104
 msgid "Portfolio Projects"
 msgstr ""
 
-#: ../admin/class-portfolio.php:126
+#: ../admin/class-portfolio.php:137
 #, php-format
 msgid "Your theme supports <strong>%s</strong>"
 msgstr ""
 
-#: ../admin/class-portfolio.php:130
+#: ../admin/class-portfolio.php:144
 msgid "Enable Portfolio Projects for this site."
 msgstr ""
 
-#: ../admin/class-portfolio.php:131 ../admin/class-testimonial.php:153
+#: ../admin/class-portfolio.php:145 ../admin/class-testimonial.php:162
 msgid "Learn More"
 msgstr ""
 
-#: ../admin/class-portfolio.php:138
+#: ../admin/class-portfolio.php:155
 #, php-format
 msgid "Portfolio pages display at most %1$s projects"
 msgstr ""
 
-#: ../admin/class-portfolio.php:228
+#: ../admin/class-portfolio.php:254
 msgid "Portfolio Items"
 msgstr ""
 
-#: ../admin/class-portfolio.php:230 ../admin/class-portfolio.php:426
+#: ../admin/class-portfolio.php:256 ../admin/class-portfolio.php:487
 msgid "Projects"
 msgstr ""
 
-#: ../admin/class-portfolio.php:231 ../admin/class-portfolio.php:370
+#: ../admin/class-portfolio.php:257 ../admin/class-portfolio.php:428
 msgid "Project"
 msgstr ""
 
-#: ../admin/class-portfolio.php:232 ../admin/class-portfolio.php:418
-#: ../admin/partials/essential-content-types-admin-display.php:104
-#: ../admin/partials/essential-content-types-admin-display.php:282
-#: ../essential-content-types.php:240
+#: ../admin/class-portfolio.php:258 ../admin/class-portfolio.php:479
+#: ../admin/partials/essential-content-types-admin-display.php:108
+#: ../admin/partials/essential-content-types-admin-display.php:323
+#: ../essential-content-types.php:246
 msgid "Portfolio"
 msgstr ""
 
-#: ../admin/class-portfolio.php:233
+#: ../admin/class-portfolio.php:259
 msgid "All Projects"
 msgstr ""
 
-#: ../admin/class-portfolio.php:235
+#: ../admin/class-portfolio.php:261
 msgid "Add New Project"
 msgstr ""
 
-#: ../admin/class-portfolio.php:236
+#: ../admin/class-portfolio.php:262
 msgid "Edit Project"
 msgstr ""
 
-#: ../admin/class-portfolio.php:237
+#: ../admin/class-portfolio.php:263
 msgid "New Project"
 msgstr ""
 
-#: ../admin/class-portfolio.php:238
+#: ../admin/class-portfolio.php:264
 msgid "View Project"
 msgstr ""
 
-#: ../admin/class-portfolio.php:239
+#: ../admin/class-portfolio.php:265
 msgid "Search Projects"
 msgstr ""
 
-#: ../admin/class-portfolio.php:240
+#: ../admin/class-portfolio.php:266
 msgid "No Projects found"
 msgstr ""
 
-#: ../admin/class-portfolio.php:241
+#: ../admin/class-portfolio.php:267
 msgid "No Projects found in Trash"
 msgstr ""
 
-#: ../admin/class-portfolio.php:242
+#: ../admin/class-portfolio.php:268
 msgid "Filter projects list"
 msgstr ""
 
-#: ../admin/class-portfolio.php:243
+#: ../admin/class-portfolio.php:269
 msgid "Project list navigation"
 msgstr ""
 
-#: ../admin/class-portfolio.php:244
+#: ../admin/class-portfolio.php:270
 msgid "Projects list"
 msgstr ""
 
-#: ../admin/class-portfolio.php:283 ../admin/class-portfolio.php:285
+#: ../admin/class-portfolio.php:309 ../admin/class-portfolio.php:311
 msgid "Project Types"
 msgstr ""
 
-#: ../admin/class-portfolio.php:284
+#: ../admin/class-portfolio.php:310
 msgid "Project Type"
 msgstr ""
 
-#: ../admin/class-portfolio.php:286
+#: ../admin/class-portfolio.php:312
 msgid "All Project Types"
 msgstr ""
 
-#: ../admin/class-portfolio.php:287
+#: ../admin/class-portfolio.php:313
 msgid "Edit Project Type"
 msgstr ""
 
-#: ../admin/class-portfolio.php:288
+#: ../admin/class-portfolio.php:314
 msgid "View Project Type"
 msgstr ""
 
-#: ../admin/class-portfolio.php:289
+#: ../admin/class-portfolio.php:315
 msgid "Update Project Type"
 msgstr ""
 
-#: ../admin/class-portfolio.php:290
+#: ../admin/class-portfolio.php:316
 msgid "Add New Project Type"
 msgstr ""
 
-#: ../admin/class-portfolio.php:291
+#: ../admin/class-portfolio.php:317
 msgid "New Project Type Name"
 msgstr ""
 
-#: ../admin/class-portfolio.php:292
+#: ../admin/class-portfolio.php:318
 msgid "Parent Project Type"
 msgstr ""
 
-#: ../admin/class-portfolio.php:293
+#: ../admin/class-portfolio.php:319
 msgid "Parent Project Type:"
 msgstr ""
 
-#: ../admin/class-portfolio.php:294
+#: ../admin/class-portfolio.php:320
 msgid "Search Project Types"
 msgstr ""
 
-#: ../admin/class-portfolio.php:295
+#: ../admin/class-portfolio.php:321
 msgid "Project type list navigation"
 msgstr ""
 
-#: ../admin/class-portfolio.php:296
+#: ../admin/class-portfolio.php:322
 msgid "Project type list"
 msgstr ""
 
-#: ../admin/class-portfolio.php:310 ../admin/class-portfolio.php:312
+#: ../admin/class-portfolio.php:336 ../admin/class-portfolio.php:338
 msgid "Project Tags"
 msgstr ""
 
-#: ../admin/class-portfolio.php:311
+#: ../admin/class-portfolio.php:337
 msgid "Project Tag"
 msgstr ""
 
-#: ../admin/class-portfolio.php:313
+#: ../admin/class-portfolio.php:339
 msgid "All Project Tags"
 msgstr ""
 
-#: ../admin/class-portfolio.php:314
+#: ../admin/class-portfolio.php:340
 msgid "Edit Project Tag"
 msgstr ""
 
-#: ../admin/class-portfolio.php:315
+#: ../admin/class-portfolio.php:341
 msgid "View Project Tag"
 msgstr ""
 
-#: ../admin/class-portfolio.php:316
+#: ../admin/class-portfolio.php:342
 msgid "Update Project Tag"
 msgstr ""
 
-#: ../admin/class-portfolio.php:317
+#: ../admin/class-portfolio.php:343
 msgid "Add New Project Tag"
 msgstr ""
 
-#: ../admin/class-portfolio.php:318
+#: ../admin/class-portfolio.php:344
 msgid "New Project Tag Name"
 msgstr ""
 
-#: ../admin/class-portfolio.php:319
+#: ../admin/class-portfolio.php:345
 msgid "Search Project Tags"
 msgstr ""
 
-#: ../admin/class-portfolio.php:320
+#: ../admin/class-portfolio.php:346
 msgid "Popular Project Tags"
 msgstr ""
 
-#: ../admin/class-portfolio.php:325
+#: ../admin/class-portfolio.php:351
 msgid "Project tag list navigation"
 msgstr ""
 
-#: ../admin/class-portfolio.php:326
+#: ../admin/class-portfolio.php:352
 msgid "Project tag list"
 msgstr ""
 
-#: ../admin/class-portfolio.php:346
+#: ../admin/class-portfolio.php:376
 #, php-format
 msgid "Project updated. <a href=\"%s\">View item</a>"
 msgstr ""
 
-#: ../admin/class-portfolio.php:349
+#: ../admin/class-portfolio.php:382
 msgid "Project updated."
 msgstr ""
 
-#: ../admin/class-portfolio.php:351
+#: ../admin/class-portfolio.php:384
 #, php-format
 msgid "Project restored to revision from %s"
 msgstr ""
 
-#: ../admin/class-portfolio.php:352
+#: ../admin/class-portfolio.php:388
 #, php-format
 msgid "Project published. <a href=\"%s\">View project</a>"
 msgstr ""
 
-#: ../admin/class-portfolio.php:353
+#: ../admin/class-portfolio.php:392
 msgid "Project saved."
 msgstr ""
 
-#: ../admin/class-portfolio.php:354
+#: ../admin/class-portfolio.php:396
 #, php-format
 msgid ""
 "Project submitted. <a target=\"_blank\" href=\"%s\">Preview project</a>"
 msgstr ""
 
-#: ../admin/class-portfolio.php:355
+#: ../admin/class-portfolio.php:403
 #, php-format
 msgid ""
 "Project scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" "
 "href=\"%2$s\">Preview project</a>"
 msgstr ""
 
-#: ../admin/class-portfolio.php:358
+#: ../admin/class-portfolio.php:412
 #, php-format
 msgid ""
 "Project item draft updated. <a target=\"_blank\" href=\"%s\">Preview "
 "project</a>"
 msgstr ""
 
-#: ../admin/class-portfolio.php:434
+#: ../admin/class-portfolio.php:495
 msgid "Portfolio Archive Title"
 msgstr ""
 
-#: ../admin/class-portfolio.php:449
+#: ../admin/class-portfolio.php:510
 msgid "Portfolio Archive Content"
 msgstr ""
 
-#: ../admin/class-portfolio.php:465
+#: ../admin/class-portfolio.php:526
 msgid "Portfolio Archive Featured Image"
 msgstr ""
 
-#: ../admin/class-portfolio.php:827
+#: ../admin/class-portfolio.php:903
 msgid ""
 "Your Portfolio Archive currently has no entries. You can start creating "
 "them on your dashboard."
 msgstr ""
 
-#: ../admin/class-service.php:101
+#: ../admin/class-service.php:111
 msgid "Service Items"
 msgstr ""
 
-#: ../admin/class-service.php:103 ../admin/class-service.php:284
-#: ../admin/class-service.php:290 ../admin/partials/dashboard-display.php:115
-#: ../admin/partials/essential-content-types-admin-display.php:119
-#: ../admin/partials/essential-content-types-admin-display.php:298
-#: ../essential-content-types.php:238
+#: ../admin/class-service.php:113 ../admin/class-service.php:329
+#: ../admin/class-service.php:335 ../admin/partials/dashboard-display.php:133
+#: ../admin/partials/essential-content-types-admin-display.php:123
+#: ../admin/partials/essential-content-types-admin-display.php:347
+#: ../essential-content-types.php:244
 msgid "Services"
 msgstr ""
 
-#: ../admin/class-service.php:104 ../admin/class-service.php:105
-#: ../admin/class-service.php:242
+#: ../admin/class-service.php:114 ../admin/class-service.php:115
+#: ../admin/class-service.php:284
 msgid "Service"
 msgstr ""
 
-#: ../admin/class-service.php:106
+#: ../admin/class-service.php:116
 msgid "All Services"
 msgstr ""
 
-#: ../admin/class-service.php:108
+#: ../admin/class-service.php:118
 msgid "Add New Service"
 msgstr ""
 
-#: ../admin/class-service.php:109
+#: ../admin/class-service.php:119
 msgid "Edit Service"
 msgstr ""
 
-#: ../admin/class-service.php:110
+#: ../admin/class-service.php:120
 msgid "New Service"
 msgstr ""
 
-#: ../admin/class-service.php:111
+#: ../admin/class-service.php:121
 msgid "View Service"
 msgstr ""
 
-#: ../admin/class-service.php:112
+#: ../admin/class-service.php:122
 msgid "Search Services"
 msgstr ""
 
-#: ../admin/class-service.php:113
+#: ../admin/class-service.php:123
 msgid "No Services found"
 msgstr ""
 
-#: ../admin/class-service.php:114
+#: ../admin/class-service.php:124
 msgid "No Services found in Trash"
 msgstr ""
 
-#: ../admin/class-service.php:116
+#: ../admin/class-service.php:126
 msgid "Service list navigation"
 msgstr ""
 
-#: ../admin/class-service.php:117
+#: ../admin/class-service.php:127
 msgid "Services list"
 msgstr ""
 
-#: ../admin/class-service.php:155 ../admin/class-service.php:157
+#: ../admin/class-service.php:165 ../admin/class-service.php:167
 msgid "Service Types"
 msgstr ""
 
-#: ../admin/class-service.php:156
+#: ../admin/class-service.php:166
 msgid "Service Type"
 msgstr ""
 
-#: ../admin/class-service.php:158
+#: ../admin/class-service.php:168
 msgid "All Service Types"
 msgstr ""
 
-#: ../admin/class-service.php:159
+#: ../admin/class-service.php:169
 msgid "Edit Service Type"
 msgstr ""
 
-#: ../admin/class-service.php:160
+#: ../admin/class-service.php:170
 msgid "View Service Type"
 msgstr ""
 
-#: ../admin/class-service.php:161
+#: ../admin/class-service.php:171
 msgid "Update Service Type"
 msgstr ""
 
-#: ../admin/class-service.php:162
+#: ../admin/class-service.php:172
 msgid "Add New Service Type"
 msgstr ""
 
-#: ../admin/class-service.php:163
+#: ../admin/class-service.php:173
 msgid "New Service Type Name"
 msgstr ""
 
-#: ../admin/class-service.php:164
+#: ../admin/class-service.php:174
 msgid "Parent Service Type"
 msgstr ""
 
-#: ../admin/class-service.php:165
+#: ../admin/class-service.php:175
 msgid "Parent Service Type:"
 msgstr ""
 
-#: ../admin/class-service.php:166
+#: ../admin/class-service.php:176
 msgid "Search Service Types"
 msgstr ""
 
-#: ../admin/class-service.php:167
+#: ../admin/class-service.php:177
 msgid "Service type list navigation"
 msgstr ""
 
-#: ../admin/class-service.php:168
+#: ../admin/class-service.php:178
 msgid "Service type list"
 msgstr ""
 
-#: ../admin/class-service.php:182 ../admin/class-service.php:184
+#: ../admin/class-service.php:192 ../admin/class-service.php:194
 msgid "Service Tags"
 msgstr ""
 
-#: ../admin/class-service.php:183
+#: ../admin/class-service.php:193
 msgid "Service Tag"
 msgstr ""
 
-#: ../admin/class-service.php:185
+#: ../admin/class-service.php:195
 msgid "All Service Tags"
 msgstr ""
 
-#: ../admin/class-service.php:186
+#: ../admin/class-service.php:196
 msgid "Edit Service Tag"
 msgstr ""
 
-#: ../admin/class-service.php:187
+#: ../admin/class-service.php:197
 msgid "View Service Tag"
 msgstr ""
 
-#: ../admin/class-service.php:188
+#: ../admin/class-service.php:198
 msgid "Update Service Tag"
 msgstr ""
 
-#: ../admin/class-service.php:189
+#: ../admin/class-service.php:199
 msgid "Add New Service Tag"
 msgstr ""
 
-#: ../admin/class-service.php:190
+#: ../admin/class-service.php:200
 msgid "New Service Tag Name"
 msgstr ""
 
-#: ../admin/class-service.php:191
+#: ../admin/class-service.php:201
 msgid "Search Service Tags"
 msgstr ""
 
-#: ../admin/class-service.php:192
+#: ../admin/class-service.php:202
 msgid "Popular Service Tags"
 msgstr ""
 
-#: ../admin/class-service.php:197
+#: ../admin/class-service.php:207
 msgid "Service tag list navigation"
 msgstr ""
 
-#: ../admin/class-service.php:198
+#: ../admin/class-service.php:208
 msgid "Service tag list"
 msgstr ""
 
-#: ../admin/class-service.php:218
+#: ../admin/class-service.php:232
 #, php-format
 msgid "Service updated. <a href=\"%s\">View item</a>"
 msgstr ""
 
-#: ../admin/class-service.php:221
+#: ../admin/class-service.php:238
 msgid "Service updated."
 msgstr ""
 
-#: ../admin/class-service.php:223
+#: ../admin/class-service.php:240
 #, php-format
 msgid "Service restored to revision from %s"
 msgstr ""
 
-#: ../admin/class-service.php:224
+#: ../admin/class-service.php:244
 #, php-format
 msgid "Service published. <a href=\"%s\">View content</a>"
 msgstr ""
 
-#: ../admin/class-service.php:225
+#: ../admin/class-service.php:248
 msgid "Service saved."
 msgstr ""
 
-#: ../admin/class-service.php:226
+#: ../admin/class-service.php:252
 #, php-format
 msgid ""
 "Service submitted. <a target=\"_blank\" href=\"%s\">Preview content</a>"
 msgstr ""
 
-#: ../admin/class-service.php:227
+#: ../admin/class-service.php:259
 #, php-format
 msgid ""
 "Service scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" "
 "href=\"%2$s\">Preview service</a>"
 msgstr ""
 
-#: ../admin/class-service.php:230
+#: ../admin/class-service.php:268
 #, php-format
 msgid ""
 "Service item draft updated. <a target=\"_blank\" href=\"%s\">Preview "
 "content</a>"
 msgstr ""
 
-#: ../admin/class-service.php:298
+#: ../admin/class-service.php:343
 msgid "Service Archive Title"
 msgstr ""
 
-#: ../admin/class-service.php:311
+#: ../admin/class-service.php:356
 msgid "Service Archive Content"
 msgstr ""
 
-#: ../admin/class-service.php:325
+#: ../admin/class-service.php:370
 msgid "Service Archive Featured Image"
 msgstr ""
 
-#: ../admin/class-service.php:681
+#: ../admin/class-service.php:741
 msgid ""
 "Your Service Archive currently has no entries. You can start creating them "
 "on your dashboard."
 msgstr ""
 
-#: ../admin/class-testimonial.php:118 ../admin/class-testimonial.php:269
-#: ../admin/class-testimonial.php:271 ../admin/class-testimonial.php:461
-#: ../admin/class-testimonial.php:471
-#: ../admin/partials/dashboard-display.php:58
-#: ../admin/partials/essential-content-types-admin-display.php:109
+#: ../admin/class-testimonial.php:126 ../admin/class-testimonial.php:288
+#: ../admin/class-testimonial.php:290 ../admin/class-testimonial.php:518
+#: ../admin/class-testimonial.php:528
+#: ../admin/partials/dashboard-display.php:66
+#: ../admin/partials/essential-content-types-admin-display.php:113
 msgid "Testimonials"
 msgstr ""
 
-#: ../admin/class-testimonial.php:148
+#: ../admin/class-testimonial.php:157
 msgid "Your theme supports Testimonials"
 msgstr ""
 
-#: ../admin/class-testimonial.php:152
+#: ../admin/class-testimonial.php:161
 msgid "Enable Testimonials for this site."
 msgstr ""
 
-#: ../admin/class-testimonial.php:164
+#: ../admin/class-testimonial.php:174
 #, php-format
 msgid "Testimonial pages display at most %1$s testimonials"
 msgstr ""
 
-#: ../admin/class-testimonial.php:267
+#: ../admin/class-testimonial.php:286
 msgid "Customer Testimonials"
 msgstr ""
 
-#: ../admin/class-testimonial.php:270
-#: ../admin/partials/essential-content-types-admin-display.php:306
-#: ../essential-content-types.php:239
+#: ../admin/class-testimonial.php:289
+#: ../admin/partials/essential-content-types-admin-display.php:359
+#: ../essential-content-types.php:245
 msgid "Testimonial"
 msgstr ""
 
-#: ../admin/class-testimonial.php:272
+#: ../admin/class-testimonial.php:291
 msgid "All Testimonials"
 msgstr ""
 
-#: ../admin/class-testimonial.php:274
+#: ../admin/class-testimonial.php:293
 msgid "Add New Testimonial"
 msgstr ""
 
-#: ../admin/class-testimonial.php:275
+#: ../admin/class-testimonial.php:294
 msgid "Edit Testimonial"
 msgstr ""
 
-#: ../admin/class-testimonial.php:276
+#: ../admin/class-testimonial.php:295
 msgid "New Testimonial"
 msgstr ""
 
-#: ../admin/class-testimonial.php:277
+#: ../admin/class-testimonial.php:296
 msgid "View Testimonial"
 msgstr ""
 
-#: ../admin/class-testimonial.php:278
+#: ../admin/class-testimonial.php:297
 msgid "Search Testimonials"
 msgstr ""
 
-#: ../admin/class-testimonial.php:279
+#: ../admin/class-testimonial.php:298
 msgid "No Testimonials found"
 msgstr ""
 
-#: ../admin/class-testimonial.php:280
+#: ../admin/class-testimonial.php:299
 msgid "No Testimonials found in Trash"
 msgstr ""
 
-#: ../admin/class-testimonial.php:281
+#: ../admin/class-testimonial.php:300
 msgid "Filter Testimonials list"
 msgstr ""
 
-#: ../admin/class-testimonial.php:282
+#: ../admin/class-testimonial.php:301
 msgid "Testimonial list navigation"
 msgstr ""
 
-#: ../admin/class-testimonial.php:283
+#: ../admin/class-testimonial.php:302
 msgid "Testimonials list"
 msgstr ""
 
-#: ../admin/class-testimonial.php:326
+#: ../admin/class-testimonial.php:349
 #, php-format
 msgid "Testimonial updated. <a href=\"%s\">View testimonial</a>"
 msgstr ""
 
-#: ../admin/class-testimonial.php:329
+#: ../admin/class-testimonial.php:355
 msgid "Testimonial updated."
 msgstr ""
 
-#: ../admin/class-testimonial.php:331
+#: ../admin/class-testimonial.php:357
 #, php-format
 msgid "Testimonial restored to revision from %s"
 msgstr ""
 
-#: ../admin/class-testimonial.php:332
+#: ../admin/class-testimonial.php:361
 #, php-format
 msgid "Testimonial published. <a href=\"%s\">View testimonial</a>"
 msgstr ""
 
-#: ../admin/class-testimonial.php:333
+#: ../admin/class-testimonial.php:365
 msgid "Testimonial saved."
 msgstr ""
 
-#: ../admin/class-testimonial.php:334
+#: ../admin/class-testimonial.php:369
 #, php-format
 msgid ""
 "Testimonial submitted. <a target=\"_blank\" href=\"%s\">Preview "
 "testimonial</a>"
 msgstr ""
 
-#: ../admin/class-testimonial.php:336
+#: ../admin/class-testimonial.php:376
 #, php-format
 msgid ""
 "Testimonial scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" "
 "href=\"%2$s\">Preview testimonial</a>"
 msgstr ""
 
-#: ../admin/class-testimonial.php:341
+#: ../admin/class-testimonial.php:385
 #, php-format
 msgid ""
 "Testimonial draft updated. <a target=\"_blank\" href=\"%s\">Preview "
 "testimonial</a>"
 msgstr ""
 
-#: ../admin/class-testimonial.php:354
+#: ../admin/class-testimonial.php:402
 msgid "Enter the customer's name here"
 msgstr ""
 
-#: ../admin/class-testimonial.php:364
+#: ../admin/class-testimonial.php:413
 msgid "Customer Name"
 msgstr ""
 
-#: ../admin/class-testimonial.php:431
+#: ../admin/class-testimonial.php:487
 msgid "Customize Testimonials Archive"
 msgstr ""
 
-#: ../admin/class-testimonial.php:432
+#: ../admin/class-testimonial.php:488
 msgid "Customize"
 msgstr ""
 
-#: ../admin/class-testimonial.php:481
+#: ../admin/class-testimonial.php:538
 msgid "Testimonial Archive Title"
 msgstr ""
 
-#: ../admin/class-testimonial.php:501
+#: ../admin/class-testimonial.php:558
 msgid "Testimonial Archive Content"
 msgstr ""
 
-#: ../admin/class-testimonial.php:523
+#: ../admin/class-testimonial.php:580
 msgid "Testimonial Archive Featured Image"
 msgstr ""
 
-#: ../admin/class-testimonial.php:808
+#: ../admin/class-testimonial.php:877
 msgid "Position"
 msgstr ""
 
-#: ../admin/class-testimonial.php:844
+#: ../admin/class-testimonial.php:916
 msgid "Testmonial Options"
 msgstr ""
 
-#: ../admin/class-testimonial.php:880
+#: ../admin/class-testimonial.php:954
 msgid ""
 "Your Testimonial Archive currently has no entries. You can start creating "
 "them on your dashboard."
 msgstr ""
 
-#: ../admin/class-testimonial.php:930
+#: ../admin/class-testimonial.php:1006
 msgid "Previous Slide"
 msgstr ""
 
-#: ../admin/class-testimonial.php:937
+#: ../admin/class-testimonial.php:1013
 msgid "Next Slide"
 msgstr ""
 
-#: ../admin/class-testimonial.php:1000
+#: ../admin/class-testimonial.php:1080
 msgid "Please define default parameters in the form of an array."
 msgstr ""
 
-#: ../admin/class-testimonial.php:1005
+#: ../admin/class-testimonial.php:1085
 msgid "Please define an SVG icon filename."
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:30
+#: ../admin/partials/dashboard-display.php:33
 msgid "Portfolios/Projects"
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:41
+#: ../admin/partials/dashboard-display.php:44
 msgid "Portfolio – Create and display your portfolio on your website."
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:43
+#: ../admin/partials/dashboard-display.php:46
 msgid ""
 "Once enabled, Portfolio Post Type options will appear on Dashboard Menu"
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:45
+#: ../admin/partials/dashboard-display.php:50
 #, php-format
 msgid "%1$sClick here%2$s to view Portfolio Archive Options."
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:69
+#: ../admin/partials/dashboard-display.php:77
 msgid "Testimonials – Add customer testimonials to your website."
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:71
+#: ../admin/partials/dashboard-display.php:79
 msgid ""
 "Once enabled, Testimonials Post Type options will appear on Dashboard Menu"
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:73
+#: ../admin/partials/dashboard-display.php:83
 #, php-format
 msgid "%1$sClick here%2$s to view Testimonial Archive Options."
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:98
+#: ../admin/partials/dashboard-display.php:111
 msgid ""
 "Featured Content – Display the content you want as featured content to "
 "attract visitors' attention."
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:100
+#: ../admin/partials/dashboard-display.php:113
 msgid ""
 "Once enabled, Featured Content Post Type options will appear on Dashboard "
 "Menu"
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:102
+#: ../admin/partials/dashboard-display.php:117
 #, php-format
 msgid "%1$sClick here%2$s to view Featured Content Archive Options."
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:127
+#: ../admin/partials/dashboard-display.php:145
 msgid "Service – Create and display your service on your website."
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:129
+#: ../admin/partials/dashboard-display.php:147
 msgid "Once enabled, Service Post Type options will appear on Dashboard Menu"
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:131
+#: ../admin/partials/dashboard-display.php:151
 #, php-format
 msgid "%1$sClick here%2$s to view Service Archive Options."
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:146
-#: ../admin/partials/essential-content-types-admin-display.php:87
-#: ../admin/partials/essential-content-types-admin-display.php:314
-#: ../admin/partials/sidebar.php:19
+#: ../admin/partials/dashboard-display.php:169
+#: ../admin/partials/essential-content-types-admin-display.php:91
+#: ../admin/partials/essential-content-types-admin-display.php:371
+#: ../admin/partials/sidebar.php:25
 msgid "Food Menu"
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:158
+#: ../admin/partials/dashboard-display.php:181
 msgid "Food Menu – Create and display your Food Menu items on your website."
 msgstr ""
 
-#: ../admin/partials/dashboard-display.php:160
+#: ../admin/partials/dashboard-display.php:183
 msgid ""
 "Once enabled, Food Menu Items Post Type options will appear on Dashboard "
 "Menu"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:19
+#: ../admin/partials/essential-content-types-admin-display.php:23
 msgid ""
 "Essential Content Types allows you to feature the impressive content "
 "through different content/post types on your website just the way you want "
@@ -1416,100 +1416,100 @@ msgid ""
 "Directory as the feature falls more towards the plugins’ territory."
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:26
+#: ../admin/partials/essential-content-types-admin-display.php:30
 msgid "Dashboard"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:27
-#: ../admin/partials/essential-content-types-admin-display.php:98
-#: ../admin/partials/essential-content-types-admin-display.php:201
+#: ../admin/partials/essential-content-types-admin-display.php:31
+#: ../admin/partials/essential-content-types-admin-display.php:102
+#: ../admin/partials/essential-content-types-admin-display.php:206
 msgid "Features"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:28
-#: ../admin/partials/essential-content-types-admin-display.php:193
+#: ../admin/partials/essential-content-types-admin-display.php:32
+#: ../admin/partials/essential-content-types-admin-display.php:198
 msgid "Compare Table"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:36
+#: ../admin/partials/essential-content-types-admin-display.php:40
 msgid "Catch Themes & Catch Plugins Tabs"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:41
+#: ../admin/partials/essential-content-types-admin-display.php:45
 msgid ""
 "If you want to turn off Catch Themes & Catch Plugins tabs option in Add "
 "Themes and Add Plugins page, please uncheck the following option."
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:46
+#: ../admin/partials/essential-content-types-admin-display.php:50
 msgid "Turn On Catch Themes & Catch Plugin tabs"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:68
+#: ../admin/partials/essential-content-types-admin-display.php:72
 msgid "Go Premium!"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:73
+#: ../admin/partials/essential-content-types-admin-display.php:77
 msgid "Dismiss this item."
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:77
-#: ../admin/partials/sidebar.php:9
+#: ../admin/partials/essential-content-types-admin-display.php:81
+#: ../admin/partials/sidebar.php:15
 msgid "Featured Content Widget"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:78
-#: ../admin/partials/essential-content-types-admin-display.php:346
-#: ../admin/partials/sidebar.php:10
+#: ../admin/partials/essential-content-types-admin-display.php:82
+#: ../admin/partials/essential-content-types-admin-display.php:419
+#: ../admin/partials/sidebar.php:16
 msgid "Portfolio Widget"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:79
-#: ../admin/partials/sidebar.php:11
+#: ../admin/partials/essential-content-types-admin-display.php:83
+#: ../admin/partials/sidebar.php:17
 msgid "Testomonials Widget"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:80
-#: ../admin/partials/sidebar.php:12
+#: ../admin/partials/essential-content-types-admin-display.php:84
+#: ../admin/partials/sidebar.php:18
 msgid "Services Widget"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:81
-#: ../admin/partials/sidebar.php:13
+#: ../admin/partials/essential-content-types-admin-display.php:85
+#: ../admin/partials/sidebar.php:19
 msgid "Ability to add shortcodes via button"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:82
-#: ../admin/partials/essential-content-types-admin-display.php:322
-#: ../admin/partials/sidebar.php:14
+#: ../admin/partials/essential-content-types-admin-display.php:86
+#: ../admin/partials/essential-content-types-admin-display.php:383
+#: ../admin/partials/sidebar.php:20
 msgid "Flexible Image Size"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:83
-#: ../admin/partials/sidebar.php:15
+#: ../admin/partials/essential-content-types-admin-display.php:87
+#: ../admin/partials/sidebar.php:21
 msgid "Events Widget"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:84
-#: ../admin/partials/sidebar.php:16
+#: ../admin/partials/essential-content-types-admin-display.php:88
+#: ../admin/partials/sidebar.php:22
 msgid "Team Widget"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:85
-#: ../admin/partials/sidebar.php:17
+#: ../admin/partials/essential-content-types-admin-display.php:89
+#: ../admin/partials/sidebar.php:23
 msgid "Events Custom Post Type"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:86
-#: ../admin/partials/sidebar.php:18
+#: ../admin/partials/essential-content-types-admin-display.php:90
+#: ../admin/partials/sidebar.php:24
 msgid "Team Custom Post Type"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:89
+#: ../admin/partials/essential-content-types-admin-display.php:93
 msgid "Find out why you should upgrade to Essential Content Types Premium »"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:105
+#: ../admin/partials/essential-content-types-admin-display.php:109
 msgid ""
 "Portfolio enables you to showcase your professional accomplishments to the "
 "world at large. Display your most impressive Portfolios in the way you "
@@ -1517,7 +1517,7 @@ msgid ""
 "columns. A marvelous way to easily display your experience and expertise."
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:110
+#: ../admin/partials/essential-content-types-admin-display.php:114
 msgid ""
 "People are always after authenticity. They are always looking for ways to "
 "know what your goods or services are really like. Customer testimonials "
@@ -1525,14 +1525,14 @@ msgid ""
 "want and also select your testimonial layout type up to 6 columns."
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:115
+#: ../admin/partials/essential-content-types-admin-display.php:119
 msgid ""
 "Featured Content allows you to showcase your recent and popular posts on "
 "your website. Your Featured Content can be displayed up to 1 to 6 columns. "
 "Enable the Featured Content option and display your most impressive posts."
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:120
+#: ../admin/partials/essential-content-types-admin-display.php:124
 msgid ""
 "Every website owner wants people to know about eh services they provide. "
 "You can place the services you provide right on the spotlight. Choose to "
@@ -1540,63 +1540,63 @@ msgid ""
 "world know what you can provide them with."
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:124
+#: ../admin/partials/essential-content-types-admin-display.php:128
 msgid "Supports all themes on WordPress"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:125
+#: ../admin/partials/essential-content-types-admin-display.php:129
 msgid ""
 "You don’t have to worry if you have a slightly different or complicated "
 "theme installed on your website. It supports all the themes on WordPress "
 "and makes your website more striking and playful."
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:129
-#: ../admin/partials/essential-content-types-admin-display.php:226
+#: ../admin/partials/essential-content-types-admin-display.php:133
+#: ../admin/partials/essential-content-types-admin-display.php:239
 msgid "Lightweight"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:130
+#: ../admin/partials/essential-content-types-admin-display.php:134
 msgid ""
 "It is extremely lightweight. You do not need to worry about it affecting "
 "the space and speed of your website."
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:135
+#: ../admin/partials/essential-content-types-admin-display.php:139
 msgid ""
 "You have the freedom to choose how your content would be displayed—whether "
 "in ascending or descending alphabetical order by author name, title, date, "
 "or in random order."
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:139
+#: ../admin/partials/essential-content-types-admin-display.php:143
 msgid "Enable/Disable any content/post type as needed"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:140
+#: ../admin/partials/essential-content-types-admin-display.php:144
 msgid ""
 "With this option, you can choose whether you want to display your content/"
 "post type or not. You can enable or disable any content or post type as per "
 "your need."
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:144
+#: ../admin/partials/essential-content-types-admin-display.php:148
 msgid "Super Simple to Set Up"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:145
+#: ../admin/partials/essential-content-types-admin-display.php:149
 msgid ""
 "It is super easy to set up. Even the beginners can set it up easily and "
 "also, you do not need to have any coding knowledge. Just install, activate, "
 "customize it your way and enjoy the plugin."
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:149
-#: ../admin/partials/essential-content-types-admin-display.php:210
+#: ../admin/partials/essential-content-types-admin-display.php:153
+#: ../admin/partials/essential-content-types-admin-display.php:215
 msgid "Responsive Design"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:150
+#: ../admin/partials/essential-content-types-admin-display.php:154
 msgid ""
 "One of the key features of our plugins is that your website will magically "
 "respond and adapt to different screen sizes delivering an optimized design "
@@ -1604,11 +1604,11 @@ msgid ""
 "zoom and scroll around when browsing on your mobile phone."
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:154
+#: ../admin/partials/essential-content-types-admin-display.php:158
 msgid "Incredible Support"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:155
+#: ../admin/partials/essential-content-types-admin-display.php:159
 msgid ""
 "We have a great line of support team and support documentation. You do not "
 "need to worry about how to use the plugins we provide, just refer to our "
@@ -1616,11 +1616,11 @@ msgid ""
 "your website, you can always hire our theme customizer!"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:159
+#: ../admin/partials/essential-content-types-admin-display.php:163
 msgid "Widgets"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:160
+#: ../admin/partials/essential-content-types-admin-display.php:164
 msgid ""
 "Multitude of widget options provide you with the option to choose the "
 "widgets that you want to display. You can have full control over each "
@@ -1628,217 +1628,217 @@ msgid ""
 "your sidebars, footer and any sidebar widgets."
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:164
+#: ../admin/partials/essential-content-types-admin-display.php:168
 msgid "Shortcodes"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:165
+#: ../admin/partials/essential-content-types-admin-display.php:169
 msgid ""
 "With Shortcodes, you have the option to use the powerful shortcode options "
 "to style multiple contents in completely different ways."
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:169
-#: ../admin/partials/essential-content-types-admin-display.php:234
+#: ../admin/partials/essential-content-types-admin-display.php:173
+#: ../admin/partials/essential-content-types-admin-display.php:251
 msgid "Number of Posts"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:170
+#: ../admin/partials/essential-content-types-admin-display.php:174
 msgid ""
 "You have the option to choose the number of posts you want to display on "
 "your website. Pick the number of posts that suits the best on your website."
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:174
-#: ../admin/partials/essential-content-types-admin-display.php:266
+#: ../admin/partials/essential-content-types-admin-display.php:178
+#: ../admin/partials/essential-content-types-admin-display.php:299
 msgid "Column Option"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:175
+#: ../admin/partials/essential-content-types-admin-display.php:179
 msgid ""
 "Column Option allows you to choose from multiple column options. Several "
 "options are available for all column types in general to edit the default "
 "behavior."
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:178
+#: ../admin/partials/essential-content-types-admin-display.php:182
 msgid "Upgrade to Essential Content Types Premium »"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:186
+#: ../admin/partials/essential-content-types-admin-display.php:190
 msgid "Get Essential Content Types Pro -"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:186
+#: ../admin/partials/essential-content-types-admin-display.php:190
 msgid "Get It Here!"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:187
+#: ../admin/partials/essential-content-types-admin-display.php:191
 msgid "You are currently using the free version of Essential Content Types."
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:188
+#: ../admin/partials/essential-content-types-admin-display.php:192
 msgid ""
 "If you have purchased from catchplugins.com, then follow this link to the "
 "installation instructions (particularly step 1)."
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:202
+#: ../admin/partials/essential-content-types-admin-display.php:207
 msgid "Free"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:203
+#: ../admin/partials/essential-content-types-admin-display.php:208
 msgid "Pro"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:218
+#: ../admin/partials/essential-content-types-admin-display.php:227
 msgid "Super Easy Setup"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:250
+#: ../admin/partials/essential-content-types-admin-display.php:275
 msgid "Shortcode"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:258
+#: ../admin/partials/essential-content-types-admin-display.php:287
 msgid "Custom Post Types"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:274
+#: ../admin/partials/essential-content-types-admin-display.php:311
 msgid "Fixed Image Size"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:330
+#: ../admin/partials/essential-content-types-admin-display.php:395
 msgid "Testimonial Slider Option"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:338
+#: ../admin/partials/essential-content-types-admin-display.php:407
 msgid "Menu Title Font Size"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:354
+#: ../admin/partials/essential-content-types-admin-display.php:431
 msgid "Featured Image Widget"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:362
+#: ../admin/partials/essential-content-types-admin-display.php:443
 msgid "Testimonials  Widget"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:370
+#: ../admin/partials/essential-content-types-admin-display.php:455
 msgid "Services  Widget"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:378
+#: ../admin/partials/essential-content-types-admin-display.php:467
 msgid "Add Shortcode Button"
 msgstr ""
 
-#: ../admin/partials/essential-content-types-admin-display.php:386
+#: ../admin/partials/essential-content-types-admin-display.php:479
 msgid "Ads-free Dashboard"
 msgstr ""
 
-#: ../admin/partials/footer.php:4
+#: ../admin/partials/footer.php:10
 msgid "Catch Plugins"
 msgstr ""
 
-#: ../admin/partials/footer.php:9
+#: ../admin/partials/footer.php:15
 msgid "View Themes"
 msgstr ""
 
-#: ../admin/partials/footer.php:10
+#: ../admin/partials/footer.php:16
 msgid "View Plugins"
 msgstr ""
 
-#: ../admin/partials/footer.php:11
+#: ../admin/partials/footer.php:17
 msgid "Support"
 msgstr ""
 
-#: ../admin/partials/sidebar.php:3
+#: ../admin/partials/sidebar.php:9
 msgid "Recommendations"
 msgstr ""
 
-#: ../admin/partials/sidebar.php:7
+#: ../admin/partials/sidebar.php:13
 msgid "Get Essential Content Types Pro"
 msgstr ""
 
-#: ../admin/partials/sidebar.php:21
+#: ../admin/partials/sidebar.php:27
 msgid "Get Now"
 msgstr ""
 
-#: ../admin/partials/sidebar.php:28
+#: ../admin/partials/sidebar.php:34
 msgid "Premium Themes"
 msgstr ""
 
-#: ../admin/partials/sidebar.php:29
+#: ../admin/partials/sidebar.php:35
 msgid ""
 "Check out our simple, clean and responsive Premium WordPress Themes that "
 "come with an array of crucial features with a superior functionality."
 msgstr ""
 
-#: ../admin/partials/sidebar.php:29
+#: ../admin/partials/sidebar.php:35
 msgid "Check our premium themes."
 msgstr ""
 
-#: ../admin/partials/sidebar.php:36
+#: ../admin/partials/sidebar.php:42
 msgid "Free Themes"
 msgstr ""
 
-#: ../admin/partials/sidebar.php:37
+#: ../admin/partials/sidebar.php:43
 msgid ""
 "Check out our collection of Free WordPress Themes that are clean, simple "
 "and feature-rich."
 msgstr ""
 
-#: ../admin/partials/sidebar.php:37
+#: ../admin/partials/sidebar.php:43
 msgid "Check our free themes."
 msgstr ""
 
-#: ../admin/partials/sidebar.php:45
+#: ../admin/partials/sidebar.php:51
 msgid "Premium Plugins"
 msgstr ""
 
-#: ../admin/partials/sidebar.php:46
+#: ../admin/partials/sidebar.php:52
 msgid ""
 "Check out our secured Premium WordPress Plugins to enhance and add extra "
 "functionalities to your website. An exceptional way to get the most out of "
 "WordPress!"
 msgstr ""
 
-#: ../admin/partials/sidebar.php:46
+#: ../admin/partials/sidebar.php:52
 msgid "Check our premium plugins."
 msgstr ""
 
-#: ../admin/partials/sidebar.php:54
+#: ../admin/partials/sidebar.php:60
 msgid "Free Plugins"
 msgstr ""
 
-#: ../admin/partials/sidebar.php:55
+#: ../admin/partials/sidebar.php:61
 msgid ""
 "Check out our Free WordPress Plugins and get the taste of our service "
 "without affecting your wallet."
 msgstr ""
 
-#: ../admin/partials/sidebar.php:56
+#: ../admin/partials/sidebar.php:62
 msgid "check our free plugins."
 msgstr ""
 
-#: ../essential-content-types.php:64
+#: ../essential-content-types.php:66
 #, php-format
 msgid ""
 "Sorry, Pro plugin is already active. No need to activate Free version. "
 "%1$s&laquo; Return to Plugins%2$s."
 msgstr ""
 
-#: ../includes/CatchThemesThemePlugin.php:154
+#: ../includes/CatchThemesThemePlugin.php:161
 msgid "Themes by CatchThemes"
 msgstr ""
 
-#: ../includes/CatchThemesThemePlugin.php:434
+#: ../includes/CatchThemesThemePlugin.php:443
 msgctxt "Plugin Installer"
 msgid "Catch Plugins"
 msgstr ""
 
-#: ../includes/CatchThemesThemePlugin.php:473
+#: ../includes/CatchThemesThemePlugin.php:487
 #, php-format
 msgid ""
 "You can use any of our free plugins or premium plugins from <a href=\"%s\" "
-"target=\"_blank\">Catch Plugins</a>"
+"target=\"_blank\">Catch Plugins</a>."
 msgstr ""

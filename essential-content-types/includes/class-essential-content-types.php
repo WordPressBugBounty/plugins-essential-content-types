@@ -1,5 +1,8 @@
 <?php
 
+// Exit if accessed directly
+if (! defined('ABSPATH')) exit;
+
 /**
  * The file that defines the core plugin class
  *
@@ -13,21 +16,8 @@
  * @subpackage Essential_Content_Types/includes
  */
 
-/**
- * The core plugin class.
- *
- * This is used to define internationalization, admin-specific hooks, and
- * public-facing site hooks.
- *
- * Also maintains the unique identifier of this plugin as well as the current
- * version of the plugin.
- *
- * @since      1.0.0
- * @package    Essential_Content_Types
- * @subpackage Essential_Content_Types/includes
- * @author     Catch Plugins <info@catchplugins.com>
- */
-class Essential_Content_Types {
+class Essential_Content_Types
+{
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -66,7 +56,8 @@ class Essential_Content_Types {
 	 *
 	 * @since    1.0.0
 	 */
-	public function __construct() {
+	public function __construct()
+	{
 
 		$this->plugin_name = 'essential-content-types';
 
@@ -75,7 +66,6 @@ class Essential_Content_Types {
 		$this->load_dependencies();
 		$this->set_locale();
 		$this->define_admin_hooks();
-
 	}
 
 	/**
@@ -94,27 +84,27 @@ class Essential_Content_Types {
 	 * @since    1.0.0
 	 * @access   private
 	 */
-	private function load_dependencies() {
+	private function load_dependencies()
+	{
 
 		/**
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-essential-content-types-loader.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-essential-content-types-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-essential-content-types-i18n.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-essential-content-types-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-essential-content-types-admin.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'admin/class-essential-content-types-admin.php';
 
 		$this->loader = new Essential_Content_Types_Loader();
-
 	}
 
 	/**
@@ -126,12 +116,12 @@ class Essential_Content_Types {
 	 * @since    1.0.0
 	 * @access   private
 	 */
-	private function set_locale() {
+	private function set_locale()
+	{
 
 		$plugin_i18n = new Essential_Content_Types_i18n();
 
-		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
-
+		$this->loader->add_action('plugins_loaded', $plugin_i18n, 'load_plugin_textdomain');
 	}
 
 	/**
@@ -141,22 +131,22 @@ class Essential_Content_Types {
 	 * @since    1.0.0
 	 * @access   private
 	 */
-	private function define_admin_hooks() {
+	private function define_admin_hooks()
+	{
 
-		$plugin_admin = new Essential_Content_Types_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Essential_Content_Types_Admin($this->get_plugin_name(), $this->get_version());
 
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+		$this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_styles');
+		$this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts');
 
-		$this->loader->add_action( 'admin_menu', $plugin_admin, 'settings_menu' );
+		$this->loader->add_action('admin_menu', $plugin_admin, 'settings_menu');
 
 		// Add ajax request handler for dashbaoard switch.
-		$this->loader->add_action( 'wp_ajax_ect_dashboard_switch', $plugin_admin, 'dashboard_switch' );
+		$this->loader->add_action('wp_ajax_ect_dashboard_switch', $plugin_admin, 'dashboard_switch');
 
-		$this->loader->add_filter( 'plugin_action_links', $plugin_admin, 'action_links', 10, 2 );
+		$this->loader->add_filter('plugin_action_links', $plugin_admin, 'action_links', 10, 2);
 
-		$this->loader->add_filter( 'plugin_row_meta', $plugin_admin, 'add_plugin_meta_links', 10, 2 );
-
+		$this->loader->add_filter('plugin_row_meta', $plugin_admin, 'add_plugin_meta_links', 10, 2);
 	}
 
 	/**
@@ -164,7 +154,8 @@ class Essential_Content_Types {
 	 *
 	 * @since    1.0.0
 	 */
-	public function run() {
+	public function run()
+	{
 		$this->loader->run();
 	}
 
@@ -175,7 +166,8 @@ class Essential_Content_Types {
 	 * @since     1.0.0
 	 * @return    string    The name of the plugin.
 	 */
-	public function get_plugin_name() {
+	public function get_plugin_name()
+	{
 		return $this->plugin_name;
 	}
 
@@ -185,7 +177,8 @@ class Essential_Content_Types {
 	 * @since     1.0.0
 	 * @return    Essential_Content_Types_Loader    Orchestrates the hooks of the plugin.
 	 */
-	public function get_loader() {
+	public function get_loader()
+	{
 		return $this->loader;
 	}
 
@@ -195,8 +188,8 @@ class Essential_Content_Types {
 	 * @since     1.0.0
 	 * @return    string    The version number of the plugin.
 	 */
-	public function get_version() {
+	public function get_version()
+	{
 		return $this->version;
 	}
-
 }

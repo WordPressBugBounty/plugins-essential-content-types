@@ -3,8 +3,8 @@ Contributors: catchplugins, catchthemes, sakinshrestha, pratikshrestha, maheshma
 Donate link: https://catchplugins.com/plugins/essential-content-types-pro/
 Tags: custom post types, custom content types, post types, taxonomy, content types
 Requires at least: 5.9
-Tested up to: 6.8
-Stable tag: trunk
+Tested up to: 7.0
+Stable tag: 2.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -200,6 +200,13 @@ Not so easy way (via FTP) :
 5. Customizer: Services Archive Options
 
 == Changelog ==
+
+= 2.4 (Released: April 05, 2026) =
+* Bug Fixed: WordPress.WP.I18n.TextDomainMismatch
+* Bug Fixed: missing_direct_file_access_protection
+* Bug Fixed: WordPress.WP.I18n.MissingTranslatorsComment
+* Bug Fixed:WordPress.Security.EscapeOutput.OutputNotEscaped
+* Compatibility check up to version 7.0
 
 = 2.3 (Released: May 13, 2025) =
 * Bug Fixed: Translation loading
