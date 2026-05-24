@@ -156,8 +156,8 @@ class Essential_Content_Types_Admin
 			return;
 		}
 
-		wp_enqueue_script('minHeight', plugin_dir_url(__FILE__) . 'js/jquery.matchHeight.min.js', array('jquery'), $this->version, false);
-		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/essential-content-types-admin.js', array('minHeight', 'jquery'), $this->version, false);
+		wp_enqueue_script('minHeight', plugin_dir_url(__FILE__) . 'js/jquery.matchHeight.min.js', array('jquery'), $this->version, true);
+		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/essential-content-types-admin.js', array('minHeight', 'jquery'), $this->version, true);
 	}
 
 	/**
@@ -214,26 +214,33 @@ class Essential_Content_Types_Admin
 	function dashboard_switch()
 	{
 		// Check nonce before doing and changes.
-		if (! check_ajax_referer('ect_nonce', 'security', false)) {
-			wp_die(esc_html__('Invalid Nonce', 'essential-content-types'));
-		} else {
-			if (! current_user_can('manage_options')) {
-				wp_die(esc_html__('Permission denied!', 'essential-content-types'));
-			}
-			$value = ('true' == $_POST['value']) ? 1 : 0;
-
-			$option_name = $_POST['option_name'];
-
-			$option_value = get_option($option_name);
-
-			$option_value['status'] = $value;
-
-			if (update_option($option_name, $option_value)) {
-				echo esc_html($value);
-			} else {
-				esc_html_e('Connection Error. Please try again.', 'essential-content-types');
-			}
+		if ( ! check_ajax_referer( 'ect_nonce', 'security', false ) ) {
+			wp_die( esc_html__( 'Invalid Nonce', 'essential-content-types' ) );
 		}
+
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_die( esc_html__( 'Permission denied!', 'essential-content-types' ) );
+		}
+
+		$value = ( isset( $_POST['value'] ) && 'true' === sanitize_text_field( wp_unslash( $_POST['value'] ) ) ) ? 1 : 0;
+
+		$valid_options = array( 'ect_portfolio', 'ect_testimonial', 'ect_featured_content', 'ect_service', 'ect_food_menu' );
+		$option_name   = isset( $_POST['option_name'] ) ? sanitize_key( wp_unslash( $_POST['option_name'] ) ) : '';
+
+		if ( ! in_array( $option_name, $valid_options, true ) ) {
+			wp_die( esc_html__( 'Invalid option.', 'essential-content-types' ) );
+		}
+
+		$option_value = get_option( $option_name );
+
+		$option_value['status'] = $value;
+
+		if ( update_option( $option_name, $option_value ) ) {
+			echo esc_html( $value );
+		} else {
+			esc_html_e( 'Connection Error. Please try again.', 'essential-content-types' );
+		}
+
 		wp_die(); // this is required to terminate immediately and return a proper response
 	}
 	function add_plugin_meta_links($meta_fields, $file)
@@ -241,8 +248,8 @@ class Essential_Content_Types_Admin
 
 		if (ESSENTIAL_CONTENT_TYPES_BASENAME == $file) {
 
-			$meta_fields[] = "<a href='https://catchplugins.com/support-forum/forum/essential-content-type/' target='_blank'>Support Forum</a>";
-			$meta_fields[] = "<a href='https://wordpress.org/support/plugin/essential-content-types/#reviews' target='_blank' title='Rate'>
+			$meta_fields[] = '<a href="https://catchplugins.com/support-forum/forum/essential-content-type/" target="_blank">' . esc_html__( 'Support Forum', 'essential-content-types' ) . '</a>';
+			$meta_fields[] = "<a href='https://wordpress.org/support/plugin/essential-content-types/#reviews' target='_blank' title='" . esc_attr__( 'Rate', 'essential-content-types' ) . "'>
 			        <i class='ct-rate-stars'>"
 				. "<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-star'><polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/></svg>"
 				. "<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-star'><polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/></svg>"

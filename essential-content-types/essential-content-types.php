@@ -16,7 +16,7 @@
  * Plugin Name:       Essential Content Types
  * Plugin URI:        https://catchplugins.com/plugins/essential-content-types/
  * Description:       Essential Content Types allows you to feature the impressive content through different content/post types on your website just the way you want it. These content/post types are missed by the themes in WordPress Theme Directory as the feature falls more towards the plugins’ territory.
- * Version:           2.4
+ * Version:           2.5
  * Author:            Catch Plugins
  * Author URI:        https://catchplugins.com
  * License:           GPL-3.0+
@@ -32,7 +32,7 @@ if (! defined('WPINC')) {
 
 // Define Version
 if (! defined('ESSENTIAL_CONTENT_TYPES_VERSION')) {
-	define('ESSENTIAL_CONTENT_TYPES_VERSION', '2.4');
+	define('ESSENTIAL_CONTENT_TYPES_VERSION', '2.5');
 }
 
 /**
@@ -58,7 +58,7 @@ if (! defined('ESSENTIAL_CONTENT_TYPES_BASENAME')) {
  * Make plugin available for translation
  * Translations can be filed in the /languages/ directory
  */
-function activate_essential_content_types()
+function essential_content_types_activate()
 {
 	$required = 'essential-content-types-pro/essential-content-types-pro.php';
 	if (is_plugin_active($required)) {
@@ -75,14 +75,14 @@ function activate_essential_content_types()
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-essential-content-types-deactivator.php
  */
-function deactivate_essential_content_types()
+function essential_content_types_deactivate()
 {
 	require_once plugin_dir_path(__FILE__) . 'includes/class-essential-content-types-deactivator.php';
 	Essential_Content_Types_Deactivator::deactivate();
 }
 
-register_activation_hook(__FILE__, 'activate_essential_content_types');
-register_deactivation_hook(__FILE__, 'deactivate_essential_content_types');
+register_activation_hook(__FILE__, 'essential_content_types_activate');
+register_deactivation_hook(__FILE__, 'essential_content_types_deactivate');
 
 /**
  * The core plugin class that is used to define internationalization,
@@ -99,16 +99,16 @@ require plugin_dir_path(__FILE__) . 'includes/class-essential-content-types.php'
  *
  * @since    1.0.0
  */
-function run_essential_content_types()
+function essential_content_types_run()
 {
 
 	$plugin = new Essential_Content_Types();
 	$plugin->run();
 }
-run_essential_content_types();
+essential_content_types_run();
 
 if (! function_exists('ect_get_layout')) :
-	function ect_get_layout()
+	function ect_get_layout() // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedFunctionFound -- ect_ is the established short prefix for this plugin.
 	{
 		$layout = array(
 			'1' => 'layout-one',
@@ -128,7 +128,7 @@ if (! function_exists('ect_plugin_path')) :
 	 *
 	 * @return string
 	 */
-	function ect_plugin_path()
+	function ect_plugin_path() // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedFunctionFound -- ect_ is the established short prefix.
 	{
 		return untrailingslashit(plugin_dir_path(__FILE__));
 	}
@@ -140,9 +140,9 @@ if (! function_exists('ect_template_path')) :
 	 *
 	 * @return string
 	 */
-	function ect_template_path()
+	function ect_template_path() // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedFunctionFound -- ect_ is the established short prefix.
 	{
-		return apply_filters('ect_template_path', 'ect-templates/');
+		return apply_filters('ect_template_path', 'ect-templates/'); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- ect_ is the established short prefix.
 	}
 endif;
 
@@ -156,7 +156,7 @@ if (! function_exists('ect_get_template_part')) :
 	 * @param string $name Template name (default: '').
 	 * @param array $atts Options to pass into template.
 	 */
-	function ect_get_template_part($slug, $name = '', $atts = '')
+	function ect_get_template_part($slug, $name = '', $atts = '') // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedFunctionFound -- ect_ is the established short prefix.
 	{
 
 		$template = '';
@@ -178,7 +178,7 @@ if (! function_exists('ect_get_template_part')) :
 		}
 
 		// Allow 3rd party plugins to filter template file from their plugin.
-		$template = apply_filters('ect_get_template_part', $template, $slug, $name);
+		$template = apply_filters('ect_get_template_part', $template, $slug, $name); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- ect_ is the established short prefix.
 
 		if ($template) {
 			load_template($template, false, 'atts');
@@ -186,7 +186,7 @@ if (! function_exists('ect_get_template_part')) :
 	}
 endif;
 
-function ect_body_classes($classes)
+function ect_body_classes($classes) // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedFunctionFound -- ect_ is the established short prefix.
 {
 	if ('featured-content' == get_post_type() || 'ect-service' == get_post_type() || 'jetpack-portfolio' == get_post_type() || 'jetpack-testimonial' == get_post_type()) {
 		$classes[] = 'ect-post';
@@ -198,8 +198,8 @@ add_filter('body_class', 'ect_body_classes');
 /* CTP tabs removal options */
 require plugin_dir_path(__FILE__) . '/includes/ctp-tabs-removal.php';
 
-$ctp_options = ctp_get_options();
-if (1 == $ctp_options['theme_plugin_tabs']) {
+$essential_content_types_ctp_options = ctp_get_options();
+if ( 1 == $essential_content_types_ctp_options['theme_plugin_tabs'] ) {
 	/* Adds Catch Themes tab in Add theme page and Themes by Catch Themes in Customizer's change theme option. */
 	if (! class_exists('CatchThemesThemePlugin') && ! function_exists('add_our_plugins_tab')) {
 		require plugin_dir_path(__FILE__) . '/includes/CatchThemesThemePlugin.php';
@@ -207,7 +207,7 @@ if (1 == $ctp_options['theme_plugin_tabs']) {
 }
 
 /* Modify ECT Post type archive title for default values */
-function ect_check_archive_title()
+function ect_check_archive_title() // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedFunctionFound -- ect_ is the established short prefix.
 {
 	global $wp_query;
 	$post_type = false;
@@ -222,7 +222,7 @@ function ect_check_archive_title()
 		'ect-service',
 	);
 
-	if ($post_type !== false || in_array($post_type, $ect_post_types, true)) {
+	if ($post_type !== false && in_array($post_type, $ect_post_types, true)) {
 		add_filter('get_the_archive_title', 'ect_modify_archive_title', 10, 1);
 	}
 }
@@ -230,14 +230,13 @@ function ect_check_archive_title()
 add_action('wp_head', 'ect_check_archive_title');
 
 /* set default title if options not found */
-function ect_modify_archive_title($title)
+function ect_modify_archive_title($title) // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedFunctionFound -- ect_ is the established short prefix.
 {
 	$title_label = '<span class="some-class">%1$s</span>%2$s';
 	$type        = ect_get_archive_post_type();
 
 	if (! $type) {
-		// Bail if type is not from ECT.
-		return;
+		return $title;
 	}
 
 	$default_title = array(
@@ -247,7 +246,16 @@ function ect_modify_archive_title($title)
 		'featured_content_title'    => esc_html__('Featured Content', 'essential-content-types'),
 	);
 
-	$archive_title = get_option($type, $default_title[$type]);
+	// Testimonial archive title is stored as a theme_mod (Jetpack-compatible format).
+	// Fall back to the old flat option for sites that haven't run the one-time migration.
+	if ( 'jetpack_testimonial_title' === $type ) {
+		$jetpack_mods  = (array) get_theme_mod( 'jetpack_testimonials', array() );
+		$archive_title = ! empty( $jetpack_mods['page-title'] )
+			? $jetpack_mods['page-title']
+			: get_option( 'jetpack_testimonial_title', $default_title['jetpack_testimonial_title'] );
+	} else {
+		$archive_title = get_option( $type, $default_title[ $type ] );
+	}
 
 	if ('' !== $archive_title) {
 		return trim(
@@ -268,13 +276,11 @@ function ect_modify_archive_title($title)
 	}
 }
 
-function ect_get_archive_post_type()
+function ect_get_archive_post_type() // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedFunctionFound -- ect_ is the established short prefix.
 {
 
 	global $wp_query;
-	if (isset($wp_query->query['post_type'])) {
-		$post_type = $wp_query->query['post_type'];
-	}
+	$post_type = isset($wp_query->query['post_type']) ? $wp_query->query['post_type'] : '';
 
 	$type = array(
 		'featured-content'    => 'featured_content_title',

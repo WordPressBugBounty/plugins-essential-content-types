@@ -59,7 +59,10 @@ class Essential_Content_Jetpack_Testimonial
 
 		$setting = 1;
 
-		if (class_exists('Jetpack_Options')) {
+		// Use JETPACK__VERSION (defined only by jetpack/jetpack.php) rather than
+		// class_exists('Jetpack_Options'), which is also true when WooCommerce is
+		// active because WooCommerce ships the same class in its own vendor package.
+		if (defined('JETPACK__VERSION') && class_exists('Jetpack_Options')) {
 			$setting = Jetpack_Options::get_option_and_ensure_autoload(self::OPTION_NAME, '0');
 		}
 
@@ -326,7 +329,12 @@ class Essential_Content_Jetpack_Testimonial
 			'show_in_rest'    => true,
 		);
 
-		$description = get_option('jetpack_testimonial_content');
+		// Read description from theme_mod array (Jetpack-compatible format).
+		// Fall back to the old flat option for sites that haven't migrated yet.
+		$jetpack_mods = (array) get_theme_mod( 'jetpack_testimonials', array() );
+		$description  = ! empty( $jetpack_mods['page-content'] )
+			? $jetpack_mods['page-content']
+			: get_option( 'jetpack_testimonial_content', '' );
 		if ('' !== $description) {
 			$args['description'] = $description;
 		}
@@ -353,8 +361,10 @@ class Essential_Content_Jetpack_Testimonial
 			2  => esc_html__('Custom field updated.', 'essential-content-types'),
 			3  => esc_html__('Custom field deleted.', 'essential-content-types'),
 			4  => esc_html__('Testimonial updated.', 'essential-content-types'),
-			/* translators: %s: date and time of the revision */
-			5  => isset($_GET['revision']) ? sprintf(esc_html__('Testimonial restored to revision from %s', 'essential-content-types'), wp_post_revision_title((int) $_GET['revision'], false)) : false,
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only display in updated_messages, no data processing.
+			5  => isset($_GET['revision']) ? sprintf(
+				/* translators: %s: date and time of the revision */
+				esc_html__('Testimonial restored to revision from %s', 'essential-content-types'), wp_post_revision_title((int) $_GET['revision'], false)) : false, // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			6  => sprintf(
 				wp_kses_post(
 					// Translators: %s is a URL to preview a published post.     					
@@ -502,6 +512,15 @@ class Essential_Content_Jetpack_Testimonial
 	 */
 	function customize_register($wp_customize)
 	{
+		// Jetpack is active and handles its own Customizer section with different setting IDs.
+		// Registering ECT's controls alongside Jetpack's causes every field to appear twice.
+		// NOTE: class_exists('Jetpack_Options') is NOT a reliable check — WooCommerce ships
+		// the same class in its own vendor package, so it stays true even when Jetpack is
+		// deactivated. JETPACK__VERSION is defined only by jetpack/jetpack.php itself.
+		if (defined('JETPACK__VERSION')) {
+			return;
+		}
+
 		essential_content_testimonial_custom_control_classes();
 
 		$wp_customize->add_panel(
@@ -512,27 +531,33 @@ class Essential_Content_Jetpack_Testimonial
 			)
 		);
 
+		// When Jetpack is inactive, nest the section inside ECT's own plugin-options panel
+		// (matching the original pre-Jetpack-14.2 UX). When Jetpack IS active, ECT bails
+		// out of customize_register() entirely and Jetpack registers the section at the
+		// top level itself — so there is never a panel mismatch.
 		$wp_customize->add_section(
 			'jetpack_testimonials',
 			array(
-				'title'          => esc_html__('Testimonials', 'essential-content-types'),
-				'theme_supports' => self::CUSTOM_POST_TYPE,
-				'priority'       => 130,
-				'panel'          => 'ect_plugin_options',
+				'title'    => esc_html__('Testimonials', 'essential-content-types'),
+				'panel'    => 'ect_plugin_options',
+				'priority' => 130,
 			)
 		);
 
+		// Settings use theme_mod type with Jetpack-compatible array keys
+		// (jetpack_testimonials[page-title], etc.) so values are stored in the
+		// same location that themes read via get_theme_mod('jetpack_testimonials').
 		$wp_customize->add_setting(
-			'jetpack_testimonial_title',
+			'jetpack_testimonials[page-title]',
 			array(
 				'default'              => esc_html__('Testimonials', 'essential-content-types'),
-				'type'                 => 'option',
+				'type'                 => 'theme_mod',
 				'sanitize_callback'    => 'sanitize_text_field',
 				'sanitize_js_callback' => 'sanitize_text_field',
 			)
 		);
 		$wp_customize->add_control(
-			'jetpack_testimonial_title',
+			'jetpack_testimonials[page-title]',
 			array(
 				'section' => 'jetpack_testimonials',
 				'label'   => esc_html__('Testimonial Archive Title', 'essential-content-types'),
@@ -541,10 +566,10 @@ class Essential_Content_Jetpack_Testimonial
 		);
 
 		$wp_customize->add_setting(
-			'jetpack_testimonial_content',
+			'jetpack_testimonials[page-content]',
 			array(
 				'default'              => '',
-				'type'                 => 'option',
+				'type'                 => 'theme_mod',
 				'sanitize_callback'    => 'wp_kses_post',
 				'sanitize_js_callback' => 'wp_kses_post',
 			)
@@ -552,20 +577,21 @@ class Essential_Content_Jetpack_Testimonial
 		$wp_customize->add_control(
 			new Essential_Content_Jetpack_Testimonial_Textarea_Control(
 				$wp_customize,
-				'jetpack_testimonial_content',
+				'jetpack_testimonials[page-content]',
 				array(
 					'section'  => 'jetpack_testimonials',
 					'label'    => esc_html__('Testimonial Archive Content', 'essential-content-types'),
-					'type'                 => 'textarea',
+					'type'     => 'textarea',
+					'settings' => 'jetpack_testimonials[page-content]',
 				)
 			)
 		);
 
 		$wp_customize->add_setting(
-			'jetpack_testimonial_featured_image',
+			'jetpack_testimonials[featured-image]',
 			array(
 				'default'              => '',
-				'type'                 => 'option',
+				'type'                 => 'theme_mod',
 				'sanitize_callback'    => 'attachment_url_to_postid',
 				'sanitize_js_callback' => 'attachment_url_to_postid',
 				'theme_supports'       => 'post-thumbnails',
@@ -574,10 +600,11 @@ class Essential_Content_Jetpack_Testimonial
 		$wp_customize->add_control(
 			new WP_Customize_Image_Control(
 				$wp_customize,
-				'jetpack_testimonial_featured_image',
+				'jetpack_testimonials[featured-image]',
 				array(
-					'section' => 'jetpack_testimonials',
-					'label'   => esc_html__('Testimonial Archive Featured Image', 'essential-content-types'),
+					'section'  => 'jetpack_testimonials',
+					'label'    => esc_html__('Testimonial Archive Featured Image', 'essential-content-types'),
+					'settings' => 'jetpack_testimonials[featured-image]',
 				)
 			)
 		);
@@ -711,7 +738,7 @@ class Essential_Content_Jetpack_Testimonial
 			 * @hooked
 			 */
 			$layout = ect_get_layout();
-			do_action('ect_before_testimonial_loop', $layout[$atts['columns']]);
+			do_action('ect_before_testimonial_loop', $layout[$atts['columns']]); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- ect_ is the established short prefix for this plugin.
 		?>
 			<?php
 			while ($query->have_posts()) {
@@ -728,14 +755,14 @@ class Essential_Content_Jetpack_Testimonial
 			 *
 			 * @hooked
 			 */
-			do_action('ect_after_testimonial_loop');
+			do_action('ect_after_testimonial_loop'); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- ect_ is the established short prefix.
 		} else {
 			/**
 			 * Hook: ect_no_testimonial_found.
 			 *
 			 * @hooked ect_no_testimonial_found
 			 */
-			do_action('ect_no_testimonial_found');
+			do_action('ect_no_testimonial_found'); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- ect_ is the established short prefix.
 		}
 
 		$html = ob_get_clean();
@@ -784,7 +811,7 @@ function essential_content_testimonial_custom_control_classes()
 		{
 			if (! empty($value)) {
 				/** This filter is already documented in core. wp-includes/post-template.php */
-				$value = apply_filters('the_content', $value);
+				$value = apply_filters('the_content', $value); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- WordPress core hook.
 			}
 
 			$value = preg_replace('@<div id="jp-post-flair"([^>]+)?>(.+)?</div>@is', '', $value); // Strip WPCOM and Jetpack post flair if included in content
@@ -867,9 +894,9 @@ class Essential_Content_Jetpack_Testimonial_Metabox
 		global $post;
 
 		// Use nonce for verification
-		wp_nonce_field(basename(__FILE__), 'ect_custom_meta_box_nonce');
+		wp_nonce_field( basename( __FILE__ ), 'ect_custom_meta_box_nonce' );
 
-		$position = get_post_meta($post->ID, 'ect_testimonial_position', true);
+		$position = get_post_meta( $post->ID, 'ect_testimonial_position', true );
 
 		// Begin the form
 		?>
@@ -893,23 +920,25 @@ class Essential_Content_Jetpack_Testimonial_Metabox
 
 		$post_type_object = get_post_type_object($post_type);
 
-		if ((defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)                      // Check Autosave
-			|| (! isset($_POST['post_ID']) || $post_id != $_POST['post_ID'])        // Check Revision
-			|| (! in_array($post_type, $this->meta_box['post_type']))                  // Check if current post type is supported.
-			|| (! check_admin_referer(basename(__FILE__), 'ect_custom_meta_box_nonce'))    // Check nonce - Security
-			|| (! current_user_can($post_type_object->cap->edit_post, $post_id))
+		if ( ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )                       // Check Autosave
+			|| ( ! in_array( $post_type, $this->meta_box['post_type'], true ) )              // Check if current post type is supported.
+			|| ( ! isset( $_POST['ect_custom_meta_box_nonce'] )
+				|| ! wp_verify_nonce( sanitize_key( wp_unslash( $_POST['ect_custom_meta_box_nonce'] ) ), basename( __FILE__ ) ) ) // Check nonce - Security
+			|| ( ! isset( $_POST['post_ID'] ) || $post_id != absint( $_POST['post_ID'] ) )  // Check Revision
+			|| ( ! current_user_can( $post_type_object->cap->edit_post, $post_id ) )
 		) {  // Check permission
 			return $post_id;
 		}
 
-		if (! update_post_meta($post_id, 'ect_testimonial_position', sanitize_text_field($_POST['ect_testimonial_position']))) {
-			add_post_meta($post_id, 'ect_testimonial_position', sanitize_text_field($_POST['ect_testimonial_position']), true);
+		$ect_position = isset( $_POST['ect_testimonial_position'] ) ? sanitize_text_field( wp_unslash( $_POST['ect_testimonial_position'] ) ) : '';
+		if ( ! update_post_meta( $post_id, 'ect_testimonial_position', $ect_position ) ) {
+			add_post_meta( $post_id, 'ect_testimonial_position', $ect_position, true );
 		}
 	}
 }
 
 add_action('init', 'register_ect_metabox');
-function register_ect_metabox()
+function register_ect_metabox() // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedFunctionFound -- ect_ is the established short prefix for this plugin.
 {
 	$ect_metabox = new Essential_Content_Jetpack_Testimonial_Metabox(
 		'ect-options',
@@ -937,7 +966,7 @@ if (! function_exists('essential_content_get_testimonial_thumbnail_link')) :
 			 * @param string|array $var Either a registered size keyword or size array.
 			 */
 			//return '<a class="testimonial-featured-image testimonial-thumbnail post-thumbnail" href="' . esc_url( get_permalink( $post_id ) ) . '">' . get_the_post_thumbnail( $post_id, apply_filters( 'testimonial_thumbnail_size', $size ) ) . '</a>';
-			return '<div class="testimonial-featured-image testimonial-thumbnail post-thumbnail">' . get_the_post_thumbnail($post_id, apply_filters('testimonial_thumbnail_size', $size)) . '</div>';
+			return '<div class="testimonial-featured-image testimonial-thumbnail post-thumbnail">' . get_the_post_thumbnail($post_id, apply_filters('testimonial_thumbnail_size', $size)) . '</div>'; // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- existing public API hook, renaming would break backward compatibility.
 		}
 	}
 endif;
@@ -953,7 +982,7 @@ if (! function_exists('essential_content_no_testimonial_found')) :
 	{
 		echo '<p><em>' . esc_html__('Your Testimonial Archive currently has no entries. You can start creating them on your dashboard.', 'essential-content-types') . '</em></p>';
 	}
-	add_action('ect_no_testimonial_found', 'essential_content_no_testimonial_found', 10);
+	add_action('ect_no_testimonial_found', 'essential_content_no_testimonial_found', 10); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 endif;
 
 
@@ -969,7 +998,7 @@ if (! function_exists('essential_content_testimonial_section_open')) :
 		echo '<div class="ect-wrapper">';
 	}
 endif;
-add_action('ect_before_testimonial_loop', 'essential_content_testimonial_section_open', 10, 1);
+add_action('ect_before_testimonial_loop', 'essential_content_testimonial_section_open', 10, 1); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 
 
 if (! function_exists('essential_content_testimonial_loop_start')) :
@@ -982,7 +1011,7 @@ if (! function_exists('essential_content_testimonial_loop_start')) :
 		echo '<div class="section-content-wrapper testimonial-content-wrapper">';
 	}
 endif;
-add_action('ect_before_testimonial_loop', 'essential_content_testimonial_loop_start', 30);
+add_action('ect_before_testimonial_loop', 'essential_content_testimonial_loop_start', 30); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 
 
 if (! function_exists('essential_content_testimonial_slider_open')) :
@@ -1003,14 +1032,14 @@ if (! function_exists('essential_content_testimonial_slider_open')) :
 			<div class="controller">
 				<!-- prev/next links -->
 				<button class="cycle-prev testimonial-slider-prev" aria-label="Previous">
-					<span class="screen-reader-text"><?php esc_html_e('Previous Slide', 'essential-content-types'); ?></span><?php echo essential_content_get_svg(array('icon' => 'angle-down')); ?>
+					<span class="screen-reader-text"><?php esc_html_e('Previous Slide', 'essential-content-types'); ?></span><?php echo wp_kses_post( essential_content_get_svg( array( 'icon' => 'angle-down' ) ) ); ?>
 				</button>
 
 				<!-- empty element for pager links -->
 				<div class="cycle-pager testimonial-slider-pager"></div>
 
 				<button class="cycle-next testimonial-slider-next" aria-label="Next">
-					<span class="screen-reader-text"><?php esc_html_e('Next Slide', 'essential-content-types'); ?></span><?php echo essential_content_get_svg(array('icon' => 'angle-down')); ?>
+					<span class="screen-reader-text"><?php esc_html_e('Next Slide', 'essential-content-types'); ?></span><?php echo wp_kses_post( essential_content_get_svg( array( 'icon' => 'angle-down' ) ) ); ?>
 				</button>
 			</div><!-- .controller -->
 
@@ -1042,7 +1071,7 @@ if (! function_exists('essential_content_testimonial_loop_end')) :
 		echo '</div><!-- .testimonial-content-wrapper -->';
 	}
 endif;
-add_action('ect_after_testimonial_loop', 'essential_content_testimonial_loop_end', 20);
+add_action('ect_after_testimonial_loop', 'essential_content_testimonial_loop_end', 20); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 
 
 if (! function_exists('essential_content_testimonial_section_close')) :
@@ -1057,7 +1086,7 @@ if (! function_exists('essential_content_testimonial_section_close')) :
 		echo '</div><!-- .ect-section -->';
 	}
 endif;
-add_action('ect_after_testimonial_loop', 'essential_content_testimonial_section_close', 30);
+add_action('ect_after_testimonial_loop', 'essential_content_testimonial_section_close', 30); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 
 
 if (! function_exists('essential_content_get_svg')) :
@@ -1155,3 +1184,47 @@ if (! function_exists('essential_content_get_svg')) :
 		return $svg;
 	}
 endif;
+
+/**
+ * One-time migration: copy old ECT flat WP options into Jetpack's theme_mod array format.
+ *
+ * ECT previously stored archive title/content/image as individual WP options
+ * (type: 'option'). Jetpack 14.2+ moved to theme_mods stored as an array under
+ * 'jetpack_testimonials'. This migration runs once on admin_init so existing
+ * site data is not lost after upgrading Jetpack.
+ */
+if ( ! function_exists( 'ect_migrate_testimonial_to_jetpack_theme_mods' ) ) {
+	function ect_migrate_testimonial_to_jetpack_theme_mods() { // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedFunctionFound -- ect_ is the established short prefix for this plugin.
+		// Migrate old flat WP options (saved by ECT's previous type:'option' settings)
+		// into the theme_mod array that both ECT and Jetpack now use for storage.
+		// Runs regardless of whether Jetpack is active so ECT-only sites are covered.
+		if ( get_option( 'ect_testimonial_migrated_to_jetpack_theme_mods' ) ) {
+			return;
+		}
+
+		$old_title   = get_option( 'jetpack_testimonial_title' );
+		$old_content = get_option( 'jetpack_testimonial_content' );
+		$old_image   = get_option( 'jetpack_testimonial_featured_image' );
+
+		if ( $old_title || $old_content || $old_image ) {
+			$mods = (array) get_theme_mod( 'jetpack_testimonials', array() );
+
+			if ( $old_title && empty( $mods['page-title'] ) ) {
+				$mods['page-title'] = sanitize_text_field( $old_title );
+			}
+
+			if ( $old_content && empty( $mods['page-content'] ) ) {
+				$mods['page-content'] = wp_kses_post( $old_content );
+			}
+
+			if ( $old_image && empty( $mods['featured-image'] ) ) {
+				$mods['featured-image'] = absint( $old_image );
+			}
+
+			set_theme_mod( 'jetpack_testimonials', $mods );
+		}
+
+		update_option( 'ect_testimonial_migrated_to_jetpack_theme_mods', true );
+	}
+	add_action( 'admin_init', 'ect_migrate_testimonial_to_jetpack_theme_mods' );
+}

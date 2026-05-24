@@ -119,9 +119,9 @@ class Essential_Content_Types
 	private function set_locale()
 	{
 
-		$plugin_i18n = new Essential_Content_Types_i18n();
-
-		$this->loader->add_action('plugins_loaded', $plugin_i18n, 'load_plugin_textdomain');
+		// Since WordPress 4.6, translations are loaded automatically for plugins
+		// hosted on WordPress.org. Manual loading is no longer needed.
+		// Keep the i18n class file to avoid fatal errors from code that references it.
 	}
 
 	/**

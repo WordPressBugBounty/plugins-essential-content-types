@@ -43,7 +43,8 @@ class CatchThemesThemePlugin
 		}
 
 		$args = wp_parse_args(
-			wp_unslash($_REQUEST['request']),
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- nonce verified by core before this callback runs; array sanitized by themes_api() below.
+			isset( $_REQUEST['request'] ) ? wp_unslash( $_REQUEST['request'] ) : array(),
 			array(
 				'per_page' => 20,
 				'fields'   => array_merge(
@@ -70,7 +71,7 @@ class CatchThemesThemePlugin
 		$old_filter = isset($args['browse']) ? $args['browse'] : 'search';
 
 		/** This filter is documented in wp-admin/includes/class-wp-theme-install-list-table.php */
-		$args = apply_filters('install_themes_table_api_args_' . $old_filter, $args);
+		$args = apply_filters('install_themes_table_api_args_' . $old_filter, $args); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- WordPress core hook name.
 
 		$api = themes_api('query_themes', $args);
 
@@ -146,7 +147,7 @@ class CatchThemesThemePlugin
 	{
 
 		if ('theme-install.php' === $hook_suffix) {
-			wp_enqueue_script('our-themes-script', plugin_dir_url(__FILE__) . '../js/our-themes.js', array('jquery'), '2018-05-16');
+			wp_enqueue_script('our-themes-script', plugin_dir_url(__FILE__) . '../js/our-themes.js', array('jquery'), '2018-05-16', true);
 		}
 	}
 
@@ -430,7 +431,7 @@ class CatchThemesThemePlugin
 		 * @param array                $args    List of arguments, such as page, search term, and tags to query for.
 		 * @param WP_Customize_Manager $manager Instance of Customize manager.
 		 */
-		$themes = apply_filters('customize_load_themes', $themes, $args, $wp_customize);
+		$themes = apply_filters('customize_load_themes', $themes, $args, $wp_customize); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- WordPress core hook name.
 
 		wp_send_json_success($themes);
 	}
@@ -496,4 +497,4 @@ class CatchThemesThemePlugin
 	}
 }
 
-$catchthemes_theme_plugin = new CatchThemesThemePlugin();
+$essential_content_types_theme_plugin = new CatchThemesThemePlugin(); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound -- renamed with plugin prefix.

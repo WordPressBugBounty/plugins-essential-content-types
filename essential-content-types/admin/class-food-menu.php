@@ -282,25 +282,42 @@ class Essential_Content_Food_Menu
 			3  => esc_html__('Custom field deleted.', 'essential-content-types'),
 			/* translators: this is about a food menu */
 			4  => esc_html__('Menu item updated.', 'essential-content-types'),
-			/* translators: %s: date and time of the revision */
-			5  => isset($_GET['revision']) ? sprintf(esc_html__('Menu item restored to revision from %s', 'essential-content-types'), wp_post_revision_title((int) $_GET['revision'], false)) : false,
-			/* translators: this is about a food menu */
-			6  => sprintf(__('Menu item published. <a href="%s">View item</a>', 'essential-content-types'), esc_url(get_permalink($post->ID))),
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only display in updated_messages, no data processing.
+			5  => isset($_GET['revision']) ? sprintf(
+				/* translators: %s: date and time of the revision */
+				esc_html__('Menu item restored to revision from %s', 'essential-content-types'), wp_post_revision_title((int) $_GET['revision'], false)) : false, // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			6  => sprintf(
+				wp_kses_post(
+					/* translators: %s is the URL to the published menu item. */
+					__('Menu item published. <a href="%s">View item</a>', 'essential-content-types')
+				),
+				esc_url(get_permalink($post->ID))
+			),
 			/* translators: this is about a food menu */
 			7  => esc_html__('Menu item saved.', 'essential-content-types'),
-			/* translators: this is about a food menu */
-			8  => sprintf(__('Menu item submitted. <a target="_blank" href="%s">Preview item</a>', 'essential-content-types'), esc_url(add_query_arg('preview', 'true', get_permalink($post->ID)))),
+			8  => sprintf(
+				wp_kses_post(
+					/* translators: %s is the URL to preview the menu item. */
+					__('Menu item submitted. <a target="_blank" href="%s">Preview item</a>', 'essential-content-types')
+				),
+				esc_url(add_query_arg('preview', 'true', get_permalink($post->ID)))
+			),
 			9  => sprintf(
 				wp_kses_post(
-					/* translators: this is about a food menu */
+					/* translators: %1$s is the scheduled date, %2$s is the URL to preview the menu item. */
 					__('Menu item scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview item</a>', 'essential-content-types')
 				),
 				// translators: Publish box date format, see http://php.net/date
 				date_i18n(__('M j, Y @ G:i', 'essential-content-types'), strtotime($post->post_date)),
 				esc_url(get_permalink($post->ID))
 			),
-			/* translators: this is about a food menu */
-			10 => sprintf(__('Menu item draft updated. <a target="_blank" href="%s">Preview item</a>', 'essential-content-types'), esc_url(add_query_arg('preview', 'true', get_permalink($post->ID)))),
+			10 => sprintf(
+				wp_kses_post(
+					/* translators: %s is the URL to preview the menu item draft. */
+					__('Menu item draft updated. <a target="_blank" href="%s">Preview item</a>', 'essential-content-types')
+				),
+				esc_url(add_query_arg('preview', 'true', get_permalink($post->ID)))
+			),
 		);
 
 		return $messages;
@@ -345,7 +362,7 @@ class Essential_Content_Food_Menu
 	{
 		$number_menu_items = wp_count_posts(self::MENU_ITEM_POST_TYPE);
 
-		if (current_user_can('administrator')) {
+		if (current_user_can('manage_options')) {
 			$number_menu_items_published = sprintf(
 				// Translators: %1$s is a URL of a current blog
 				'<a href="%1$s">%2$s</a>',
@@ -515,9 +532,10 @@ class Essential_Content_Food_Menu
 
 	function admin_notices()
 	{
-		if (isset($_GET['ect_food_reordered']))
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only display of admin notice, no data processing.
+		if ( isset( $_GET['ect_food_reordered'] ) )
 			/* translators: this is about a food menu */
-			printf('<div class="updated"><p>%s</p></div>', esc_html__('Menu Items re-ordered.', 'essential-content-types'));
+			printf( '<div class="updated"><p>%s</p></div>', esc_html__( 'Menu Items re-ordered.', 'essential-content-types' ) );
 	}
 
 	function no_title_sorting($columns)
@@ -611,15 +629,15 @@ class Essential_Content_Food_Menu
 	function maybe_reorder_menu_items()
 	{
 		// make sure we clicked our button
-		if (! (isset($_REQUEST['menu_reorder_submit']) && $_REQUEST['menu_reorder_submit'] === __('Save New Order', 'essential-content-types')))
-			return;;
-
-		// make sure we have the nonce
-		if (! (isset($_REQUEST['drag-drop-reorder']) && wp_verify_nonce($_REQUEST['drag-drop-reorder'], 'drag-drop-reorder')))
+		if ( ! ( isset( $_REQUEST['menu_reorder_submit'] ) && sanitize_text_field( wp_unslash( $_REQUEST['menu_reorder_submit'] ) ) === __( 'Save New Order', 'essential-content-types' ) ) )
 			return;
 
-		$term_pairs = array_map('absint', $_REQUEST['ect_food_menu_term']);
-		$order_pairs = array_map('absint', $_REQUEST['ect_food_order']);
+		// make sure we have the nonce
+		if ( ! ( isset( $_REQUEST['drag-drop-reorder'] ) && wp_verify_nonce( sanitize_key( wp_unslash( $_REQUEST['drag-drop-reorder'] ) ), 'drag-drop-reorder' ) ) )
+			return;
+
+		$term_pairs  = isset( $_REQUEST['ect_food_menu_term'] ) ? array_map( 'absint', $_REQUEST['ect_food_menu_term'] ) : array();
+		$order_pairs = isset( $_REQUEST['ect_food_order'] ) ? array_map( 'absint', $_REQUEST['ect_food_order'] ) : array();
 
 		foreach ($order_pairs as $ID => $menu_order) {
 			$ID = absint($ID);
@@ -650,7 +668,8 @@ class Essential_Content_Food_Menu
 
 	function edit_menu_items_page_load()
 	{
-		if (isset($_GET['action'])) {
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- nonce is verified inside handle_menu_item_actions().
+		if ( isset( $_GET['action'] ) ) {
 			$this->handle_menu_item_actions();
 		}
 
@@ -675,14 +694,14 @@ class Essential_Content_Food_Menu
 
 	function handle_menu_item_actions()
 	{
-		$action = (string) $_GET['action'];
+		$action = isset( $_GET['action'] ) ? sanitize_key( wp_unslash( $_GET['action'] ) ) : '';
 
-		switch ($action) {
+		switch ( $action ) {
 			case 'move-item-up':
 			case 'move-item-down':
 				$reorder = false;
 
-				$post_id = (int) $_GET['post_id'];
+				$post_id = isset( $_GET['post_id'] ) ? absint( $_GET['post_id'] ) : 0;
 
 				$term = $this->get_menu_item_menu_leaf($post_id);
 
@@ -749,7 +768,7 @@ class Essential_Content_Food_Menu
 			case 'move-menu-down':
 				$reorder = false;
 
-				$term_id = (int) $_GET['term_id'];
+				$term_id = isset( $_GET['term_id'] ) ? absint( $_GET['term_id'] ) : 0;
 
 				$terms = $this->get_menus();
 
@@ -893,7 +912,7 @@ class Essential_Content_Food_Menu
 
 	function add_many_new_items_page_load()
 	{
-		if ('POST' === strtoupper($_SERVER['REQUEST_METHOD'])) {
+		if ( isset( $_SERVER['REQUEST_METHOD'] ) && 'POST' === strtoupper( sanitize_text_field( wp_unslash( $_SERVER['REQUEST_METHOD'] ) ) ) ) {
 			$this->process_form_request();
 			exit;
 		}
@@ -926,16 +945,16 @@ class Essential_Content_Food_Menu
 			check_admin_referer('ect_food_many_items');
 		}
 
+		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.ValidatedSanitizedInput.MissingUnslash -- array_keys returns integer keys only.
 		foreach (array_keys($_POST['ect_food_title']) as $key) :
-			// $_POST is already slashed
 			$post_details = array(
 				'post_status'  => 'publish',
 				'post_type'    => self::MENU_ITEM_POST_TYPE,
-				'post_content' => $_POST['ect_food_content'][$key],
-				'post_title'   => $_POST['ect_food_title'][$key],
+				'post_content' => isset( $_POST['ect_food_content'][ $key ] ) ? wp_kses_post( wp_unslash( $_POST['ect_food_content'][ $key ] ) ) : '',
+				'post_title'   => isset( $_POST['ect_food_title'][ $key ] ) ? sanitize_text_field( wp_unslash( $_POST['ect_food_title'][ $key ] ) ) : '',
 				'tax_input'    => array(
-					self::MENU_ITEM_LABEL_TAX => $_POST['ect_food_labels'][$key],
-					self::MENU_TAX            => isset($_POST['ect_food_menu_tax']) ? $_POST['ect_food_menu_tax'] : null,
+					self::MENU_ITEM_LABEL_TAX => isset( $_POST['ect_food_labels'][ $key ] ) ? sanitize_text_field( wp_unslash( $_POST['ect_food_labels'][ $key ] ) ) : '',
+					self::MENU_TAX            => isset( $_POST['ect_food_menu_tax'] ) ? sanitize_text_field( wp_unslash( $_POST['ect_food_menu_tax'] ) ) : null,
 				),
 			);
 
@@ -944,7 +963,7 @@ class Essential_Content_Food_Menu
 				continue;
 			}
 
-			$this->set_price($post_id, isset($_POST['ect_food_price'][$key]) ? stripslashes($_POST['ect_food_price'][$key]) : '');
+			$this->set_price($post_id, isset($_POST['ect_food_price'][$key]) ? sanitize_text_field( wp_unslash( $_POST['ect_food_price'][$key] ) ) : '');
 
 			if ($is_ajax) :
 				$post = get_post($post_id);
@@ -1044,6 +1063,7 @@ class Essential_Content_Food_Menu
 	function menu_item_price_meta_box($post, $meta_box)
 	{
 		$price = $this->get_price($post->ID);
+		wp_nonce_field( 'ect_food_menu_price', 'ect_food_menu_nonce' );
 	?>
 		<label for="ect-food-price-<?php echo (int) $post->ID; ?>" class="screen-reader-text"><?php esc_html_e('Price', 'essential-content-types'); ?></label>
 		<input type="text" id="ect-food-price-<?php echo (int) $post->ID; ?>" class="widefat" name="ect_food_price[<?php echo (int) $post->ID; ?>]" value="<?php echo esc_attr($price); ?>" />
@@ -1052,11 +1072,15 @@ class Essential_Content_Food_Menu
 
 	function add_post_meta($post_id)
 	{
+		if ( ! isset( $_POST['ect_food_menu_nonce'] ) || ! wp_verify_nonce( sanitize_key( wp_unslash( $_POST['ect_food_menu_nonce'] ) ), 'ect_food_menu_price' ) ) {
+			return;
+		}
+
 		if (!isset($_POST['ect_food_price'][$post_id])) {
 			return;
 		}
 
-		$this->set_price($post_id, stripslashes($_POST['ect_food_price'][$post_id]));
+		$this->set_price($post_id, sanitize_text_field( wp_unslash( $_POST['ect_food_price'][$post_id] ) ));
 	}
 
 	/* Data */
@@ -1067,7 +1091,8 @@ class Essential_Content_Food_Menu
 			'hide_empty' => false,
 		));
 
-		$terms = get_terms(self::MENU_TAX, $args);
+		$args['taxonomy'] = self::MENU_TAX;
+		$terms = get_terms($args);
 		if (!$terms || is_wp_error($terms)) {
 			return array();
 		}
@@ -1287,7 +1312,7 @@ class Essential_Content_Food_Menu
 		 * @param false|object $term   Taxonomy term for current menu item.
 		 */
 		echo wp_kses_post(apply_filters(
-			'essential-content-types_ect_food_menu_item_loop_open_element',
+			'essential-content-types_ect_food_menu_item_loop_open_element', // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- hyphenated plugin slug; renaming would break backward compatibility.
 			'<' . tag_escape($markup["{$field}_tag"]) . $this->menu_item_loop_class($markup["{$field}_class"]) . ">\n",
 			$field,
 			$markup,
@@ -1316,7 +1341,7 @@ class Essential_Content_Food_Menu
 		 * @param false|object $term   Taxonomy term for current menu item.
 		 */
 		echo wp_kses_post(apply_filters(
-			'essential-content-types_ect_food_menu_item_loop_close_element',
+			'essential-content-types_ect_food_menu_item_loop_close_element', // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- hyphenated plugin slug; renaming would break backward compatibility.
 			'</' . tag_escape($markup["{$field}_tag"]) . ">\n",
 			$field,
 			$markup,
@@ -1348,7 +1373,7 @@ class Essential_Content_Food_Menu
 		 * @param false|object $term   Taxonomy term for current menu item.
 		 */
 		return apply_filters(
-			'essential-content-types_ect_food_menu_item_loop_class',
+			'essential-content-types_ect_food_menu_item_loop_class', // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- hyphenated plugin slug; renaming would break backward compatibility.
 			' class="' . esc_attr($class) . '"',
 			$class,
 			$this->menu_item_loop_current_term
@@ -1383,7 +1408,7 @@ class Essential_Content_Food_Menu
 
 		// enqueue shortcode styles when shortcode is used
 		wp_enqueue_style('ect-food-menu-style', plugins_url('css/food-menu-shortcode.css', __FILE__), array(), '20140326');
-		wp_enqueue_script('ect-food-menu-script', plugins_url('js/food-menu-shortcode.js', __FILE__), array('jquery'), '20180530', false);
+		wp_enqueue_script('ect-food-menu-script', plugins_url('js/food-menu-shortcode.js', __FILE__), array('jquery'), '20180530', true);
 
 		return self::ect_food_shortcode_html($atts);
 	}
@@ -1404,7 +1429,7 @@ class Essential_Content_Food_Menu
 		$args['post_type'] = self::MENU_ITEM_POST_TYPE; // Force this post type
 
 		if (false != $atts['include_type'] || false != $atts['include_tag']) {
-			$args['tax_query'] = array();
+			$args['tax_query'] = array(); // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query -- necessary for filtering by menu type/tag.
 		}
 
 		// If 'include_type' has been set use it on the main query
@@ -1455,7 +1480,7 @@ class Essential_Content_Food_Menu
 			 * @hooked ect_food_menu_section
 			 */
 			$layout = ect_get_layout();
-			do_action('ect_before_food_menu_loop');
+			do_action('ect_before_food_menu_loop'); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 		?>
 			<?php
 
@@ -1473,14 +1498,14 @@ class Essential_Content_Food_Menu
 			 *
 			 * @hooked
 			 */
-			do_action('ect_after_food_menu_loop');
+			do_action('ect_after_food_menu_loop'); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 		} else {
 			/**
 			 * Hook: ect_no_food_menu_found.
 			 *
 			 * @hooked ect_no_food_menu_found
 			 */
-			do_action('ect_no_food_menu_found');
+			do_action('ect_no_food_menu_found'); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 		}
 
 		$html = ob_get_clean();
@@ -1522,7 +1547,7 @@ if (! function_exists('essential_content_no_food_menu_found')):
 		echo "<p><em>" . esc_html__('Your Food Menu Archive currently has no entries. You can start creating them on your dashboard.', 'essential-content-types') . "</em></p>";
 	}
 endif;
-add_action('ect_no_food_menu_found', 'essential_content_no_food_menu_found', 10);
+add_action('ect_no_food_menu_found', 'essential_content_no_food_menu_found', 10); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 
 
 if (! function_exists('essential_content_food_menu_section_open')):
@@ -1537,7 +1562,7 @@ if (! function_exists('essential_content_food_menu_section_open')):
 		echo '<div class="ect-wrapper">';
 	}
 endif;
-add_action('ect_before_food_menu_loop', 'essential_content_food_menu_section_open', 10, 1);
+add_action('ect_before_food_menu_loop', 'essential_content_food_menu_section_open', 10, 1); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 
 
 if (! function_exists('essential_content_food_menu_loop_start')):
@@ -1550,7 +1575,7 @@ if (! function_exists('essential_content_food_menu_loop_start')):
 		echo '<div class="section-content-wrapper menu-content-wrapper">';
 	}
 endif;
-add_action('ect_before_food_menu_loop', 'essential_content_food_menu_loop_start', 30);
+add_action('ect_before_food_menu_loop', 'essential_content_food_menu_loop_start', 30); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 
 
 if (! function_exists('essential_content_food_menu_loop_end')):
@@ -1563,7 +1588,7 @@ if (! function_exists('essential_content_food_menu_loop_end')):
 		echo '</div><!-- .menu-content-wrapper -->';
 	}
 endif;
-add_action('ect_after_food_menu_loop', 'essential_content_food_menu_loop_end', 10);
+add_action('ect_after_food_menu_loop', 'essential_content_food_menu_loop_end', 10); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 
 
 if (! function_exists('essential_content_food_menu_section_close')):
@@ -1578,7 +1603,7 @@ if (! function_exists('essential_content_food_menu_section_close')):
 		echo '</div><!-- .ect-section -->';
 	}
 endif;
-add_action('ect_after_food_menu_loop', 'essential_content_food_menu_section_close', 20);
+add_action('ect_after_food_menu_loop', 'essential_content_food_menu_section_close', 20); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 
 function essential_content_food_menu_get_menus($args = array())
 {
@@ -1586,7 +1611,8 @@ function essential_content_food_menu_get_menus($args = array())
 		'hide_empty' => false,
 	));
 
-	$terms = get_terms('ect_food_menu', $args);
+	$args['taxonomy'] = 'ect_food_menu';
+	$terms = get_terms($args);
 	if (!$terms || is_wp_error($terms)) {
 		return array();
 	}

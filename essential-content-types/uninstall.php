@@ -30,29 +30,26 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }
 
-$options = array(
+$essential_content_types_options = array(
     'ect_portfolio',
     'ect_testimonial',
     'ect_featured_content',
 );
 
-if ( !is_multisite() ) {
+if ( ! is_multisite() ) {
     // For Single site
-    foreach ( $options as $option) {
-        delete_option( $option );
+    foreach ( $essential_content_types_options as $essential_content_types_option ) {
+        delete_option( $essential_content_types_option );
     }
 } else {
     // For Multisite
-    global $wpdb;
+    $essential_content_types_sites = get_sites( array( 'fields' => 'ids', 'number' => 0 ) );
 
-    $blog_ids         = $wpdb->get_col( "SELECT blog_id FROM $wpdb->blogs" );
-    $original_blog_id = get_current_blog_id();
-
-    foreach ( $blog_ids as $blog_id ) {
-        switch_to_blog( $blog_id );
-        foreach ( $options as $option) {
-            delete_site_option( $option );
+    foreach ( $essential_content_types_sites as $essential_content_types_blog_id ) {
+        switch_to_blog( $essential_content_types_blog_id );
+        foreach ( $essential_content_types_options as $essential_content_types_option ) {
+            delete_site_option( $essential_content_types_option );
         }
+        restore_current_blog();
     }
-    switch_to_blog( $original_blog_id );
 }

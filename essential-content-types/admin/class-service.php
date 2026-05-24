@@ -236,8 +236,10 @@ class Essential_Content_Service
             2  => esc_html__('Custom field updated.', 'essential-content-types'),
             3  => esc_html__('Custom field deleted.', 'essential-content-types'),
             4  => esc_html__('Service updated.', 'essential-content-types'),
-            /* translators: %s: date and time of the revision */
-            5  => isset($_GET['revision']) ? sprintf(esc_html__('Service restored to revision from %s', 'essential-content-types'), wp_post_revision_title((int) $_GET['revision'], false)) : false,
+            // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only display in updated_messages, no data processing.
+            5  => isset($_GET['revision']) ? sprintf(
+                /* translators: %s: date and time of the revision */
+                esc_html__('Service restored to revision from %s', 'essential-content-types'), wp_post_revision_title((int) $_GET['revision'], false)) : false, // phpcs:ignore WordPress.Security.NonceVerification.Recommended
             6  => sprintf(
                 wp_kses_post(
                     // Translators: %s is a URL of a published post. 
@@ -511,7 +513,7 @@ class Essential_Content_Service
         $args['post_type'] = self::CUSTOM_POST_TYPE; // Force this post type
 
         if (false != $atts['include_type'] || false != $atts['include_tag']) {
-            $args['tax_query'] = array();
+            $args['tax_query'] = array(); // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query -- necessary for filtering by service type/tag.
         }
 
         // If 'include_type' has been set use it on the main query
@@ -566,7 +568,7 @@ class Essential_Content_Service
              * @hooked 
              */
             $layout = ect_get_layout();
-            do_action('ect_before_service_loop', $layout[$atts['columns']]);
+            do_action('ect_before_service_loop', $layout[$atts['columns']]); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 
 ?>
             <?php
@@ -588,14 +590,14 @@ class Essential_Content_Service
              *
              * @hooked
              */
-            do_action('ect_after_service_loop');
+            do_action('ect_after_service_loop'); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
         } else {
             /**
              * Hook: ect_no_service_found.
              *
              * @hooked ect_no_service_found
              */
-            do_action('ect_no_service_found');
+            do_action('ect_no_service_found'); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
         }
 
         $html = ob_get_clean();
@@ -724,7 +726,7 @@ if (! function_exists('essential_content_get_service_thumbnail_link')):
              *
              * @param string|array $var Either a registered size keyword or size array.
              */
-            return '<a class="service-featured-image" href="' . esc_url(get_permalink($post_id)) . '">' . get_the_post_thumbnail($post_id, apply_filters('service_thumbnail_size', $size)) . '</a>';
+            return '<a class="service-featured-image" href="' . esc_url(get_permalink($post_id)) . '">' . get_the_post_thumbnail($post_id, apply_filters('service_thumbnail_size', $size)) . '</a>'; // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- existing public API hook, renaming would break backward compatibility.
         }
     }
 endif;
@@ -740,7 +742,7 @@ if (! function_exists('essential_content_no_service_found')):
     {
         echo "<p><em>" . esc_html__('Your Service Archive currently has no entries. You can start creating them on your dashboard.', 'essential-content-types') . "</em></p>";
     }
-    add_action('ect_no_service_found', 'essential_content_no_service_found', 10);
+    add_action('ect_no_service_found', 'essential_content_no_service_found', 10); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 endif;
 
 
@@ -756,7 +758,7 @@ if (! function_exists('essential_content_service_section_open')):
         echo '<div class="ect-wrapper">';
     }
 endif;
-add_action('ect_before_service_loop', 'essential_content_service_section_open', 10, 1);
+add_action('ect_before_service_loop', 'essential_content_service_section_open', 10, 1); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 
 
 if (! function_exists('essential_content_service_loop_start')):
@@ -769,7 +771,7 @@ if (! function_exists('essential_content_service_loop_start')):
         echo '<div class="section-content-wrapper service-content-wrapper ' . esc_html($layout) . '">';
     }
 endif;
-add_action('ect_before_service_loop', 'essential_content_service_loop_start', 30);
+add_action('ect_before_service_loop', 'essential_content_service_loop_start', 30); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 
 
 if (! function_exists('essential_content_service_loop_end')):
@@ -782,7 +784,7 @@ if (! function_exists('essential_content_service_loop_end')):
         echo '</div><!-- .service-content-wrapper -->';
     }
 endif;
-add_action('ect_after_service_loop', 'essential_content_service_loop_end', 10);
+add_action('ect_after_service_loop', 'essential_content_service_loop_end', 10); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 
 
 if (! function_exists('essential_content_service_section_close')):
@@ -797,4 +799,4 @@ if (! function_exists('essential_content_service_section_close')):
         echo '</div><!-- .ect-section -->';
     }
 endif;
-add_action('ect_after_service_loop', 'essential_content_service_section_close', 20);
+add_action('ect_after_service_loop', 'essential_content_service_section_close', 20); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound

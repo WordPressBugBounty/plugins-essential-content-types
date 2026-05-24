@@ -3,8 +3,9 @@ Contributors: catchplugins, catchthemes, sakinshrestha, pratikshrestha, maheshma
 Donate link: https://catchplugins.com/plugins/essential-content-types-pro/
 Tags: custom post types, custom content types, post types, taxonomy, content types
 Requires at least: 5.9
+Requires PHP: 7.4
 Tested up to: 7.0
-Stable tag: 2.4
+Stable tag: 2.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -200,6 +201,21 @@ Not so easy way (via FTP) :
 5. Customizer: Services Archive Options
 
 == Changelog ==
+
+= 2.5 (Released: May 24, 2026) =
+* Security Fix: All admin form submissions, AJAX handlers, and meta boxes now properly validate and sanitize user input before saving
+* Security Fix: Admin access checks now use WordPress capability checks instead of role checks, which works correctly with custom user roles
+* Bug Fixed: Food menu price field now has its own security check before saving
+* Bug Fixed: Testimonial Customizer settings (title, description, featured image) now save and display correctly whether or not Jetpack is active
+* Restored: Testimonials section is again visible under Appearance > Customize when Jetpack is not active
+* Bug Fixed: Portfolio section now works correctly when WooCommerce is active alongside Jetpack
+* Bug Fixed: Archive page titles for non-ECT post types (e.g. blog posts) were sometimes blank or incorrect
+* Bug Fixed: PHP 8 compatibility — resolved an undefined variable error on archive pages
+* Bug Fixed: Uninstalling on a multisite network now correctly removes plugin data from all sites
+* Bug Fixed: Several admin labels and help text that were not available for translation can now be translated
+* Bug Fixed: Food menu category filtering updated to use the current WordPress API
+* Improved: Admin and shortcode scripts now load in the footer for better page performance
+* Compatibility check up to version 7.0
 
 = 2.4 (Released: April 05, 2026) =
 * Bug Fixed: WordPress.WP.I18n.TextDomainMismatch
