@@ -144,7 +144,7 @@ class Essential_Content_Types
 		// Add ajax request handler for dashbaoard switch.
 		$this->loader->add_action('wp_ajax_ect_dashboard_switch', $plugin_admin, 'dashboard_switch');
 
-		$this->loader->add_filter('plugin_action_links', $plugin_admin, 'action_links', 10, 2);
+		$this->loader->add_filter('plugin_action_links_' . ESSENTIAL_CONTENT_TYPES_BASENAME, $plugin_admin, 'action_links', 10, 1);
 
 		$this->loader->add_filter('plugin_row_meta', $plugin_admin, 'add_plugin_meta_links', 10, 2);
 	}

@@ -30,7 +30,7 @@ if (! defined('ABSPATH')) {
             <?php
             the_title('<h2 class="entry-title">', '</h2>');
             $essential_content_types_position = get_post_meta(get_the_ID(), 'ect_testimonial_position', false);
-            if ($essential_content_types_position[0]) : ?>
+            if (! empty($essential_content_types_position[0])) : ?>
                 <p class="entry-meta"><span class="position ect-testimonial-position"><?php echo esc_html($essential_content_types_position[0]); ?></span></p>
             <?php endif; ?>
         </header>

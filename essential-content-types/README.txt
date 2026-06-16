@@ -5,9 +5,9 @@ Tags: custom post types, custom content types, post types, taxonomy, content typ
 Requires at least: 5.9
 Requires PHP: 7.4
 Tested up to: 7.0
-Stable tag: 2.5
+Stable tag: 2.6
 License: GPLv3 or later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 Essential Content Types allows you to feature the impressive content through different content/post types on your website just the way you want it.
 
@@ -201,6 +201,15 @@ Not so easy way (via FTP) :
 5. Customizer: Services Archive Options
 
 == Changelog ==
+
+= 2.6 (Released: June 16, 2026) =
+* Bug Fixed: Settings page no longer shows PHP warnings when a content type's options haven't been saved yet
+* Bug Fixed: Saving content-type settings no longer triggers a PHP warning if the option had never been saved before
+* Bug Fixed: Food Menu drag-and-drop reordering no longer triggers a warning when an item has no menu assigned
+* Bug Fixed: Testimonial position text no longer triggers a warning when a testimonial has no position set
+* Bug Fixed: Settings link on the Plugins page no longer appears on unrelated plugins
+* Improved: License links now use secure HTTPS
+* Improved: Tag links for Portfolio, Featured Content, and Service items now reference the correct taxonomy
 
 = 2.5 (Released: May 24, 2026) =
 * Security Fix: All admin form submissions, AJAX handlers, and meta boxes now properly validate and sanitize user input before saving

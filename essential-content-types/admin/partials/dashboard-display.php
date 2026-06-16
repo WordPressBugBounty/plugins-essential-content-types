@@ -29,11 +29,11 @@ if (! defined('ABSPATH')) exit;
                         <?php
                         $essential_content_types_portfolio_options = get_option('ect_portfolio');
                         ?>
-                        <div class="module-header <?php echo $essential_content_types_portfolio_options['status'] ? 'active' : 'inactive'; ?>">
+                        <div class="module-header <?php echo ! empty($essential_content_types_portfolio_options['status']) ? 'active' : 'inactive'; ?>">
                             <h3 class="module-title"><?php esc_html_e('Portfolios/Projects', 'essential-content-types'); ?></h3>
                             <div class="switch">
                                 <input type="hidden" name="ect_nonce" id="ect_nonce" value="<?php echo esc_attr(wp_create_nonce('ect_nonce')); ?>" />
-                                <input type="checkbox" id="ect_portfolio" class="input-switch" rel="ect_portfolio" <?php checked(true, $essential_content_types_portfolio_options['status']); ?>>
+                                <input type="checkbox" id="ect_portfolio" class="input-switch" rel="ect_portfolio" <?php checked(true, ! empty($essential_content_types_portfolio_options['status'])); ?>>
                                 <label for="ect_portfolio"></label>
                             </div>
 
@@ -69,11 +69,11 @@ if (! defined('ABSPATH')) exit;
                         <?php
                         $essential_content_types_testimonial_options = get_option('ect_testimonial');
                         ?>
-                        <div class="module-header <?php echo $essential_content_types_testimonial_options['status'] ? 'active' : 'inactive'; ?>">
+                        <div class="module-header <?php echo ! empty($essential_content_types_testimonial_options['status']) ? 'active' : 'inactive'; ?>">
                             <h3 class="module-title"><?php esc_html_e('Testimonials', 'essential-content-types'); ?></h3>
                             <div class="switch">
                                 <input type="hidden" name="ect_nonce" id="ect_nonce" value="<?php echo esc_attr(wp_create_nonce('ect_nonce')); ?>" />
-                                <input type="checkbox" id="ect_testimonial" class="input-switch" rel="ect_testimonial" <?php checked(true, $essential_content_types_testimonial_options['status']); ?>>
+                                <input type="checkbox" id="ect_testimonial" class="input-switch" rel="ect_testimonial" <?php checked(true, ! empty($essential_content_types_testimonial_options['status'])); ?>>
                                 <label for="ect_testimonial"></label>
                             </div>
 
@@ -109,12 +109,12 @@ if (! defined('ABSPATH')) exit;
                         <?php
                         $essential_content_types_featured_content_options = get_option('ect_featured_content');
                         ?>
-                        <div class="module-header <?php echo $essential_content_types_featured_content_options['status'] ? 'active' : 'inactive'; ?>">
+                        <div class="module-header <?php echo ! empty($essential_content_types_featured_content_options['status']) ? 'active' : 'inactive'; ?>">
                             <h3 class="module-title"><?php esc_html_e('Featured Content', 'essential-content-types'); ?></h3>
 
                             <div class="switch">
                                 <input type="hidden" name="ect_nonce" id="ect_nonce" value="<?php echo esc_attr(wp_create_nonce('ect_nonce')); ?>" />
-                                <input type="checkbox" id="ect_featured_content" class="input-switch" rel="ect_featured_content" <?php checked(true, $essential_content_types_featured_content_options['status']); ?>>
+                                <input type="checkbox" id="ect_featured_content" class="input-switch" rel="ect_featured_content" <?php checked(true, ! empty($essential_content_types_featured_content_options['status'])); ?>>
                                 <label for="ect_featured_content"></label>
                             </div>
 
@@ -150,12 +150,12 @@ if (! defined('ABSPATH')) exit;
                         <?php
                         $essential_content_types_service_options = get_option('ect_service');
                         ?>
-                        <div class="module-header <?php echo $essential_content_types_service_options['status'] ? 'active' : 'inactive'; ?>">
+                        <div class="module-header <?php echo ! empty($essential_content_types_service_options['status']) ? 'active' : 'inactive'; ?>">
                             <h3 class="module-title"><?php esc_html_e('Services', 'essential-content-types'); ?></h3>
 
                             <div class="switch">
                                 <input type="hidden" name="ect_nonce" id="ect_nonce" value="<?php echo esc_attr(wp_create_nonce('ect_nonce')); ?>" />
-                                <input type="checkbox" id="ect_service" class="input-switch" rel="ect_service" <?php checked(true, $essential_content_types_service_options['status']); ?>>
+                                <input type="checkbox" id="ect_service" class="input-switch" rel="ect_service" <?php checked(true, ! empty($essential_content_types_service_options['status'])); ?>>
                                 <label for="ect_service"></label>
                             </div>
 
@@ -189,16 +189,16 @@ if (! defined('ABSPATH')) exit;
                 <?php
                 $essential_content_types_food_menu_options = get_option('ect_food_menu');
                 ?>
-                <?php if ($essential_content_types_food_menu_options['status']) : ?>
+                <?php if (! empty($essential_content_types_food_menu_options['status'])) : ?>
                     <div class="module-wrap">
                         <div id="module-food-menu" class="catch-modules">
 
-                            <div class="module-header <?php echo $essential_content_types_food_menu_options['status'] ? 'active' : 'inactive'; ?>">
+                            <div class="module-header active">
                                 <h3 class="module-title"><?php esc_html_e('Food Menu', 'essential-content-types'); ?></h3>
 
                                 <div class="switch">
                                     <input type="hidden" name="ect_nonce" id="ect_nonce" value="<?php echo esc_attr(wp_create_nonce('ect_nonce')); ?>" />
-                                    <input type="checkbox" id="ect_food_menu" class="input-switch" rel="ect_food_menu" <?php checked(true, $essential_content_types_food_menu_options['status']); ?>>
+                                    <input type="checkbox" id="ect_food_menu" class="input-switch" rel="ect_food_menu" <?php checked(true, ! empty($essential_content_types_food_menu_options['status'])); ?>>
                                     <label for="ect_food_menu"></label>
                                 </div>
 

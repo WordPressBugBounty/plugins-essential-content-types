@@ -168,16 +168,15 @@ class Essential_Content_Types_Admin
 	 *
 	 * @param arrray $file File name.
 	 */
-	public function action_links($links, $file)
+	public function action_links($links)
 	{
-		if ($file === $this->plugin_name . '/' . $this->plugin_name . '.php') {
-			$settings_link = '<a href="' . esc_url(admin_url('admin.php?page=essential-content-types')) . '">' . esc_html__('Settings', 'essential-content-types') . '</a>';
+		$settings_link = '<a href="' . esc_url(admin_url('admin.php?page=essential-content-types')) . '">' . esc_html__('Settings', 'essential-content-types') . '</a>';
 
-			array_unshift($links, $settings_link);
+		array_unshift($links, $settings_link);
 
-			// Add link to premium plugin.
-			$links = array_merge(array('ectPluginCallout' => '<a href="https://catchplugins.com/plugins/essential-content-types-pro/" target="_blank" rel="noopener noreferrer"><strong style="color: #11967A; display: inline;">' . esc_html__('Upgrade To Premium', 'essential-content-types') . '</strong><span class="screen-reader-text"> (' . esc_html__('opens in new tab', 'essential-content-types') . ')</span></a>'), $links);
-		}
+		// Add link to premium plugin.
+		$links = array_merge(array('ectPluginCallout' => '<a href="https://catchplugins.com/plugins/essential-content-types-pro/" target="_blank" rel="noopener noreferrer"><strong style="color: #11967A; display: inline;">' . esc_html__('Upgrade To Premium', 'essential-content-types') . '</strong><span class="screen-reader-text"> (' . esc_html__('opens in new tab', 'essential-content-types') . ')</span></a>'), $links);
+
 		return $links;
 	}
 
@@ -232,6 +231,9 @@ class Essential_Content_Types_Admin
 		}
 
 		$option_value = get_option( $option_name );
+		if ( ! is_array( $option_value ) ) {
+			$option_value = array();
+		}
 
 		$option_value['status'] = $value;
 

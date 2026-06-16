@@ -661,7 +661,7 @@ class Essential_Content_Service
         $tags = array();
         // Loop thorugh all the tags
         foreach ($content_tags as $content_tag) {
-            $content_tag_link = get_term_link($content_tag, self::CUSTOM_TAXONOMY_TYPE);
+            $content_tag_link = get_term_link($content_tag, self::CUSTOM_TAXONOMY_TAG);
 
             if (is_wp_error($content_tag_link)) {
                 return $content_tag_link;

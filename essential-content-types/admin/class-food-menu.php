@@ -654,7 +654,8 @@ class Essential_Content_Food_Menu
 				wp_update_post(compact('ID', 'menu_order'));
 
 			// save a write if the term hasn't changed
-			if ($term_pairs[$ID] != $this->get_menu_by_post_id($ID)->term_id)
+			$current_menu = $this->get_menu_by_post_id($ID);
+			if (isset($term_pairs[$ID]) && (! $current_menu || $term_pairs[$ID] !== $current_menu->term_id))
 				wp_set_object_terms($ID, $term_pairs[$ID], self::MENU_TAX);
 		}
 
